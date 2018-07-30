@@ -29,8 +29,8 @@ Game::Game(MainWindow& wnd)
 	cam(ct),
 	c{ humanModel, "human", 50, 10.f, Vec2{ 0.f,0.f }, Colors::Red},
 	o{ ogreModel, "ogre", 100, 20.f, Vec2{ 100.f,0.f }, Colors::Blue },
-	s{ serpentModel, "serpent", 30, 40.f, Vec2{ -100.f,0.f }, Colors::Green }
-
+	s{ serpentModel, "serpent", 30, 40.f, Vec2{ -100.f,0.f }, Colors::Green },
+	ss{ serpentModel, "serpent", 30, 40.f, Vec2{ -200.f,0.f }, Colors::Green }
 
 {
 
@@ -147,5 +147,7 @@ void Game::ComposeFrame()
 	{
 		c.Update(cam);
 	}
+
+	ss.Update(cam);
 
 }

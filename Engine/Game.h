@@ -60,6 +60,7 @@ private:
 	Creature c;
 	Creature o;
 	Creature s;
+	Creature ss;
 
 	CreatureManager creatureManager;
 

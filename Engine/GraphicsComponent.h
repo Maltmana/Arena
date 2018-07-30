@@ -22,6 +22,6 @@ public:
 	void SetScale(const float scale) { m_scale = scale; };
 	const Color & GetColor() const { return m_color; };
 
-	Color & m_color;
+	Color m_color;
 	float m_scale = 1.f;
 };
