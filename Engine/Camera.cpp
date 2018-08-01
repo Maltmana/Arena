@@ -2,10 +2,14 @@
 #include "CoordinateTransformer.h"
 #include "Entity.h"
 
-Camera::Camera(CoordinateTransformer & ct)
+Camera::Camera(Graphics & graphics)
 	:
-	m_ct{ ct }
-{}
+	m_graphics{ graphics },
+	m_ct{graphics}
+{
+	//numberOfCameras++;
+	//assert(numberOfCameras < 2);
+}
 
 void Camera::MoveBy(const Vec2 & offset)
 {
@@ -27,4 +31,14 @@ void Camera::DrawHitbox(Entity & entity) const
 	drawable.Translate(-m_pos);
 	drawable.Scale(m_scale);
 	m_ct.Draw(drawable);
+}
+
+void Camera::BeginFrame()
+{
+	m_graphics.BeginFrame();
+}
+
+void Camera::EndFrame()
+{
+	m_graphics.EndFrame();
 }

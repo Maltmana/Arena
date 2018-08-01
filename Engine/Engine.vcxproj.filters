@@ -49,6 +49,12 @@
     <Filter Include="Header Files\GameObjectManagers">
       <UniqueIdentifier>{7c8302e7-2f95-4e17-9a65-02c1e02cad77}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\SuperComponents">
+      <UniqueIdentifier>{a96754d4-8fbd-4da7-b2f9-f08560719e19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SuperComponents\UserInputManager">
+      <UniqueIdentifier>{a85bf60b-419d-4cb6-9d3b-1d3fbbbb31e8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -90,9 +96,6 @@
     <ClInclude Include="Resource.h">
       <Filter>Header Files\Framework</Filter>
     </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>Header Files\RenderingPipeline</Filter>
-    </ClInclude>
     <ClInclude Include="Drawable.h">
       <Filter>Header Files\RenderingPipeline</Filter>
     </ClInclude>
@@ -125,6 +128,15 @@
     </ClInclude>
     <ClInclude Include="Rect.h">
       <Filter>Header Files\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files\SuperComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInputManager.h">
+      <Filter>Header Files\SuperComponents\UserInputManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>Header Files\SuperComponents\UserInputManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -177,6 +189,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Clock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInputManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

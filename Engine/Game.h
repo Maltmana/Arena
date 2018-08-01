@@ -20,55 +20,44 @@
  ******************************************************************************************/
 #pragma once
 
-#include "Keyboard.h"
-#include "Mouse.h"
-#include "Graphics.h"
+
 #include "Star.h"
-#include "CoordinateTransformer.h"
 #include "Entity.h"
 #include "Creature.h"
 #include "Camera.h"
 #include "CreatureManager.h"
 #include "Rect.h"
-
 #include "Clock.h"
-
+#include "UserInputManager.h"
 class Game
 {
 public:
-	Game( class MainWindow& wnd );
+	Game( Camera & camera, const UserInputManager & UIM );
 	Game( const Game& ) = delete;
 	Game& operator=( const Game& ) = delete;
 	void Go();
 private:
 	void ComposeFrame();
 	void UpdateModel();
-	/********************************/
-	/*  User Functions              */
-	/********************************/
-private:
-	MainWindow& wnd;
-	Graphics gfx;
-	/********************************/
-	/*  User Variables              */
 
-	CoordinateTransformer ct;
-	Camera cam;
+private:
+
+	Camera & m_camera;
+	const UserInputManager & m_userInputManager;
 
 	std::vector<Vec2> humanModel = {  {10, -10}, { 10,10 },{ -10,10 },{ -10,-10 }};
 	std::vector<Vec2> ogreModel = {  {20, -20}, { 20,20 },{ -20,20 },{ -20,-20 } };
 	std::vector<Vec2> serpentModel = {{ 30, -10 }, {30,10 },{ -30,10 },{ -30,-10 }};
 
-	Creature c;
-	Creature o;
-	Creature s;
-	Creature ss;
+	//Creature c;
+	//Creature o;
+	//Creature s;
+	//Creature ss;
 
 	CreatureManager creatureManager;
 
 	Clock m_frameClock;
 
-
 	bool m_followC = false;
-	/********************************/
+
 };

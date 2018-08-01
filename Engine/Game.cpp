@@ -18,46 +18,46 @@
  *	You should have received a copy of the GNU General Public License					  *
  *	along with The Chili DirectX Framework.  If not, see <http://www.gnu.org/licenses/>.  *
  ******************************************************************************************/
-#include "MainWindow.h"
 #include "Game.h"
-
-Game::Game(MainWindow& wnd)
+Game::Game(Camera & camera, const UserInputManager & userInputManager)
 	:
-	wnd(wnd),
-	gfx(wnd),
-	ct(gfx),
-	cam(ct),
-	c{ humanModel, "human", 50, 10.f, Vec2{ 0.f,0.f }, Colors::Red},
-	o{ ogreModel, "ogre", 100, 20.f, Vec2{ 100.f,0.f }, Colors::Blue },
-	s{ serpentModel, "serpent", 30, 40.f, Vec2{ -100.f,0.f }, Colors::Green },
-	ss{ serpentModel, "serpent", 30, 40.f, Vec2{ -200.f,0.f }, Colors::Green }
+	//c{ humanModel, "human", 50, 10.f, Vec2{ 0.f,0.f }, Colors::Red},
+	//o{ ogreModel, "ogre", 100, 20.f, Vec2{ 100.f,0.f }, Colors::Blue },
+	//s{ serpentModel, "serpent", 30, 40.f, Vec2{ -100.f,0.f }, Colors::Green },
+	//ss{ serpentModel, "serpent", 30, 40.f, Vec2{ -200.f,0.f }, Colors::Green },
+	m_camera{ camera },
+	m_userInputManager{userInputManager}
+	
 
 {
+	//m_userInputManager.m_w->execute();
+	//userInputManager.m_w->execute();
+
+
 
 	//entities.emplace_back(Star::Make(100.f, 50.f), Vec2{ -300.f,0.f });
-	creatureManager.AddCreature(c);
-	creatureManager.AddCreature(o);
-	creatureManager.AddCreature(s);
-
-
+	//creatureManager.AddCreature(c);
+	//creatureManager.AddCreature(o);
+	//creatureManager.AddCreature(s);
 
 }
 
 void Game::Go()
 {
-	gfx.BeginFrame();	
+	m_camera.BeginFrame();	
 	UpdateModel();
 	ComposeFrame();
-	gfx.EndFrame();
+	m_camera.EndFrame();
 }
 
 void Game::UpdateModel()
 {
+	//m_userInputManager.HandleInput();
+
 	double frameTime = m_frameClock.GetCounterS();
 	m_frameClock.StartCounter();
 
-
-
+	/*
 	float speed = 100.f*frameTime; // pixels per second
 
 		if (wnd.kbd.KeyIsPressed(VK_RIGHT))
@@ -68,7 +68,7 @@ void Game::UpdateModel()
 			}
 			else
 			{
-				cam.MoveBy({ speed,0.f });
+				m_camera.MoveBy({ speed,0.f });
 			}
 
 		}
@@ -80,7 +80,7 @@ void Game::UpdateModel()
 			}
 			else
 			{
-				cam.MoveBy({ -speed,0.f });
+				m_camera.MoveBy({ -speed,0.f });
 			}
 		}
 		if (wnd.kbd.KeyIsPressed(VK_UP))
@@ -91,7 +91,7 @@ void Game::UpdateModel()
 			}
 			else
 			{
-				cam.MoveBy({ 0.f,speed });
+				m_camera.MoveBy({ 0.f,speed });
 			}
 		}
 		if (wnd.kbd.KeyIsPressed(VK_DOWN))
@@ -102,13 +102,13 @@ void Game::UpdateModel()
 			}
 			else
 			{
-				cam.MoveBy({ 0.f,-speed });
+				m_camera.MoveBy({ 0.f,-speed });
 			}
 		}
 
 		if (wnd.kbd.KeyIsPressed(VK_RETURN))
 		{
-			bool oldFollowC = m_followC;		
+			bool oldFollowC = m_followC;
 			if (m_followC == false)
 			{
 				m_followC = true;
@@ -122,7 +122,7 @@ void Game::UpdateModel()
 
 		if (m_followC)
 		{
-			cam.MoveTo(creatureManager.creatures.back().GetPos());
+			m_camera.MoveTo(creatureManager.creatures.back().GetPos());
 		}
 
 
@@ -131,32 +131,32 @@ void Game::UpdateModel()
 			const auto mr = wnd.mouse.Read();
 			if (mr.GetType() == Mouse::Event::Type::WheelUp)
 			{
-				cam.SetScale(cam.GetScale() * 1.05f);
+				m_camera.SetScale(m_camera.GetScale() * 1.05f);
 			}
 			if (mr.GetType() == Mouse::Event::Type::WheelDown)
 			{
-				cam.SetScale(cam.GetScale() * 0.95f);
+				m_camera.SetScale(m_camera.GetScale() * 0.95f);
 			}
 		}
 
 		if (wnd.kbd.KeyIsPressed(VK_CONTROL))
 		{
-			creatureManager.CreateCreature("human", cam.GetPos());
+			creatureManager.CreateCreature("human", m_camera.GetPos());
 		}
-
+		*/
 }
 	
 void Game::ComposeFrame()
 {
 	for (auto & c : creatureManager.creatures)
 	{
-		c.Update(cam);
+		c.Update(m_camera);
 	}
 
-	ss.Update(cam);
+	//ss.Update(m_camera);
 
 	const std::vector<Vec2> GUIrect = { {-200, -200}, { 0,0 } };
-	//Entity GUI(GUIrect, cam.GetPos(), Colors::Magenta);
+	//Entity GUI(GUIrect, camera.GetPos(), Colors::Magenta);
 
-	//GUI.Update(cam);
+	//GUI.Update(camera);
 }

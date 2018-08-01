@@ -2,7 +2,7 @@
 
 CoordinateTransformer::CoordinateTransformer(Graphics & gfx)
 	:
-	gfx(gfx)
+	gfx{ gfx }
 {}
 
 void CoordinateTransformer::Draw(Drawable & drawable) const
