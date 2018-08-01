@@ -2,7 +2,7 @@
 #include "Colors.h"
 
 
-class Entity;
+class GameWorldObject;
 class Camera;
 
 /*Sole interactor with camera class which is the sole interactor with gfx via the rendering pipeline. Sends data to be processed by Camera.*/
@@ -14,9 +14,9 @@ public:
 		m_color{color}
 	{}
 
-	void Update(Entity & entity, Camera & camera);
+	void Update(GameWorldObject & gameWorldObject, Camera & camera);
 
-	void DrawHitbox(Entity & entity, Camera & camera) const;
+	void DrawHitbox(GameWorldObject & gameWorldObject, Camera & camera) const;
 
 	const float GetScale() const { return m_scale; };
 	void SetScale(const float scale) { m_scale = scale; };

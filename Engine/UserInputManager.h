@@ -32,7 +32,7 @@ public:
 		return *this;
 	}*/
 
-	void HandleInput();
+	Command * HandleInput();
 
 	Keyboard & GetKeyboard();
 	Mouse & GetMouse();
@@ -41,10 +41,10 @@ public:
 public:
 	MainWindow & m_window;
 
-	Command * m_w = 0;
-	Command * m_s = 0;
-	Command * m_a = 0;
-	Command * m_d = 0;
+	Command * m_W = 0;
+	Command * m_S = 0;
+	Command * m_A = 0;
+	Command * m_D = 0;
 
 	static LeftCommand leftCommand;
 	static UpCommand upCommand;

@@ -150,11 +150,12 @@
     <ClInclude Include="CreatureManager.h" />
     <ClInclude Include="Drawable.h" />
     <ClInclude Include="DXErr.h" />
-    <ClInclude Include="Entity.h" />
+    <ClInclude Include="GameWorldObject.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="GraphicsComponent.h" />
     <ClInclude Include="InputComponent.h" />
+    <ClInclude Include="LogicComponent.h" />
     <ClInclude Include="UserInputManager.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="MainWindow.h" />
@@ -175,7 +176,7 @@
     <ClCompile Include="CreatureManager.cpp" />
     <ClCompile Include="Drawable.cpp" />
     <ClCompile Include="DXErr.cpp" />
-    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="GameWorldObject.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="GraphicsComponent.cpp" />

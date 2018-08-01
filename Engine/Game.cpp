@@ -21,19 +21,19 @@
 #include "Game.h"
 Game::Game(Camera & camera, UserInputManager & userInputManager)
 	:
-	c{ humanModel, "human", 50, 10.f, Vec2{ 0.f,0.f }, Colors::Red},
-	o{ ogreModel, "ogre", 100, 20.f, Vec2{ 100.f,0.f }, Colors::Blue },
-	s{ serpentModel, "serpent", 30, 40.f, Vec2{ -100.f,0.f }, Colors::Green },
-	ss{ serpentModel, "serpent", 30, 40.f, Vec2{ -200.f,0.f }, Colors::Green },
+	//c{ humanModel, "human", 50, 10.f, Vec2{ 0.f,0.f }, Colors::Red},
+	//o{ ogreModel, "ogre", 100, 20.f, Vec2{ 100.f,0.f }, Colors::Blue },
+	//s{ serpentModel, "serpent", 30, 40.f, Vec2{ -100.f,0.f }, Colors::Green },
+	//ss{ serpentModel, "serpent", 30, 40.f, Vec2{ -200.f,0.f }, Colors::Green },
 	m_camera{ camera },
 	m_userInputManager{userInputManager}
 	
 
 {
 
-	creatureManager.AddCreature(c);
-	creatureManager.AddCreature(o);
-	creatureManager.AddCreature(s);
+	//creatureManager.AddCreature(c);
+	//creatureManager.AddCreature(o);
+	//creatureManager.AddCreature(s);
 
 }
 
@@ -47,10 +47,20 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
-	m_userInputManager.HandleInput();
 
-	double frameTime = m_frameClock.GetCounterS();
-	m_frameClock.StartCounter();
+	// TODO : handle logic components.
+
+	double frameTime = m_clock.GetCounterS();
+	m_clock.StartCounter();
+	GameWorldObject activeGameWorldObject = m_camera;
+	float speed = 100.f*frameTime;
+
+	Command * command = m_userInputManager.HandleInput();
+	if (command)
+	{
+		command->execute(activeGameWorldObject, speed);
+	}
+
 
 	/*
 	float speed = 100.f*frameTime; // pixels per second
@@ -143,15 +153,19 @@ void Game::UpdateModel()
 	
 void Game::ComposeFrame()
 {
-	for (auto & c : creatureManager.creatures)
-	{
-		c.Update(m_camera);
-	}
 
-	ss.Update(m_camera);
+
+	// TODO : Handle graphics components.
+
+	//for (auto & c : creatureManager.creatures)
+	//{
+	//	c.Update(m_camera);
+	//}
+
+	/*ss.Update(m_camera);*/
 
 	//const std::vector<Vec2> GUIrect = { {-200, -200}, { 0,0 } };
-	//Entity GUI(GUIrect, camera.GetPos(), Colors::Magenta);
+	//GameWorldObject GUI(GUIrect, camera.GetPos(), Colors::Magenta);
 
 	//GUI.Update(camera);
 }

@@ -31,20 +31,11 @@
     <Filter Include="Source Files\RenderingPipeline">
       <UniqueIdentifier>{632f62ab-8dc3-439c-ab0f-2ede23293fd3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Entities">
-      <UniqueIdentifier>{eb43cae5-94c2-4d35-b284-02f2d4f4bacf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Entities">
       <UniqueIdentifier>{855ed093-27ef-4d98-90fa-240bf019639a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\ComponentInterfaces">
-      <UniqueIdentifier>{8ddda724-4f7f-470e-b3b7-c473781773e0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\ComponentInterfaces">
       <UniqueIdentifier>{e7a686ab-2104-4c48-80ca-dcbdefb35a28}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Entities\Creatures">
-      <UniqueIdentifier>{ab06d428-f752-4d45-bd29-d6eb49bd1866}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\GameObjectManagers">
       <UniqueIdentifier>{7c8302e7-2f95-4e17-9a65-02c1e02cad77}</UniqueIdentifier>
@@ -54,6 +45,15 @@
     </Filter>
     <Filter Include="Header Files\SuperComponents\UserInputManager">
       <UniqueIdentifier>{a85bf60b-419d-4cb6-9d3b-1d3fbbbb31e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameWorldObjects">
+      <UniqueIdentifier>{eb43cae5-94c2-4d35-b284-02f2d4f4bacf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameWorldObjects\Creatures">
+      <UniqueIdentifier>{ab06d428-f752-4d45-bd29-d6eb49bd1866}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Components">
+      <UniqueIdentifier>{8ddda724-4f7f-470e-b3b7-c473781773e0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -105,20 +105,17 @@
     <ClInclude Include="Vec2.h">
       <Filter>Header Files\Helper</Filter>
     </ClInclude>
-    <ClInclude Include="Entity.h">
-      <Filter>Header Files\Entities</Filter>
-    </ClInclude>
     <ClInclude Include="Star.h">
       <Filter>Header Files\Helper</Filter>
     </ClInclude>
     <ClInclude Include="GraphicsComponent.h">
-      <Filter>Header Files\ComponentInterfaces</Filter>
+      <Filter>Header Files\Components</Filter>
     </ClInclude>
     <ClInclude Include="InputComponent.h">
-      <Filter>Header Files\ComponentInterfaces</Filter>
+      <Filter>Header Files\Components</Filter>
     </ClInclude>
     <ClInclude Include="Creature.h">
-      <Filter>Header Files\Entities\Creatures</Filter>
+      <Filter>Header Files\GameWorldObjects\Creatures</Filter>
     </ClInclude>
     <ClInclude Include="CreatureManager.h">
       <Filter>Header Files\GameObjectManagers</Filter>
@@ -138,6 +135,12 @@
     <ClInclude Include="Command.h">
       <Filter>Header Files\SuperComponents\UserInputManager</Filter>
     </ClInclude>
+    <ClInclude Include="GameWorldObject.h">
+      <Filter>Header Files\GameWorldObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="LogicComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -150,9 +153,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CoordinateTransformer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Sound.cpp">
@@ -192,6 +192,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="UserInputManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameWorldObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

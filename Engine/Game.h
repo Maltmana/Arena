@@ -22,7 +22,7 @@
 
 
 #include "Star.h"
-#include "Entity.h"
+#include "GameWorldObject.h"
 #include "Creature.h"
 #include "Camera.h"
 #include "CreatureManager.h"
@@ -41,26 +41,27 @@ private:
 	void UpdateModel();
 
 private:
+	// SUPER COMPONENTS
+	Camera & m_camera;
+	UserInputManager & m_userInputManager;
+	
 	// FIRST ORDER
+	Clock m_clock;
 	std::vector<Vec2> humanModel = {  {10, -10}, { 10,10 },{ -10,10 },{ -10,-10 }};
 	std::vector<Vec2> ogreModel = {  {20, -20}, { 20,20 },{ -20,20 },{ -20,-20 } };
 	std::vector<Vec2> serpentModel = {{ 30, -10 }, {30,10 },{ -30,10 },{ -30,-10 }};
 
 	// SECOND ORDER
 
-	Creature c;
-	Creature o;
-	Creature s;
-	Creature ss;
+	//Creature c;
+	//Creature o;
+	//Creature s;
+	//Creature ss;
+
+	//CreatureManager creatureManager;
 
 
+	
 
-	Clock m_frameClock;
-
-	bool m_followC = false;
-
-	Camera & m_camera;
-	UserInputManager & m_userInputManager;
-	CreatureManager creatureManager;
 
 };

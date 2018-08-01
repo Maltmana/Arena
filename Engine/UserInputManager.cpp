@@ -1,29 +1,26 @@
 #include "UserInputManager.h"
 #include <assert.h>
 
+
 UserInputManager::UserInputManager(MainWindow & window)
 	:
 	m_window{window}
 {
 	assert(numberOfUserInputManagers < 1);
-		m_a = &leftCommand;
-		m_w = &upCommand;	
+		m_A = &leftCommand;
+		m_W = &upCommand;	
 
 		numberOfUserInputManagers++;
 
 }
 
-void UserInputManager::HandleInput()
+Command * UserInputManager::HandleInput()
 {
-	if (m_window.kbd.KeyIsPressed(0x57))
-	{
-		m_w->execute();
+	if (m_window.kbd.KeyIsPressed('W')) return  m_W; // TODO : understand wtf this crazy thing is.
+	if (m_window.kbd.KeyIsPressed('A')) return  m_A;
 
-	}
-	if (m_window.kbd.KeyIsPressed(0x41))
-	{
-		m_a->execute(); // access violation during this operation when trying to access execute. must be something with the pointer creation.
-	}
+	// nothing was pressed. do nothing.
+	return NULL;
 }
 
 
