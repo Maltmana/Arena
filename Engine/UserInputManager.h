@@ -46,8 +46,8 @@ public:
 	Command * m_a = 0;
 	Command * m_d = 0;
 
-	//static LeftCommand leftCommand;
-	//static UpCommand upCommand;
+	static LeftCommand leftCommand;
+	static UpCommand upCommand;
 
 
 	static int numberOfUserInputManagers;

@@ -52,6 +52,8 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
+
+	m_userInputManager.m_w->execute();
 	//m_userInputManager.HandleInput();
 
 	double frameTime = m_frameClock.GetCounterS();

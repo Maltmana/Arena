@@ -6,10 +6,8 @@ UserInputManager::UserInputManager(MainWindow & window)
 	m_window{window}
 {
 	assert(numberOfUserInputManagers < 1);
-		LeftCommand a;
-		m_a = &a;
-		UpCommand w;
-		m_w = &w;
+		m_a = &leftCommand;
+		m_w = &upCommand;
 		m_w->execute();
 
 		numberOfUserInputManagers++;
@@ -42,3 +40,6 @@ Mouse & UserInputManager::GetMouse()
 }
 
 int UserInputManager::numberOfUserInputManagers = 0;
+
+LeftCommand UserInputManager::leftCommand;
+UpCommand UserInputManager::upCommand;
