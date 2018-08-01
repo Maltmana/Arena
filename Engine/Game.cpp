@@ -61,7 +61,6 @@ void Game::UpdateModel()
 		command->execute(activeGameWorldObject, speed);
 	}
 
-
 	/*
 	float speed = 100.f*frameTime; // pixels per second
 
