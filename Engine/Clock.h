@@ -1,9 +1,10 @@
 #pragma once
 #include <windows.h>
+#include <assert.h>
 
 class Clock
 {
-public:
+public: // TODO : set up debug asserts or unit tests if even possible for this...
 
 	Clock();
 	void StartCounter();
@@ -11,6 +12,8 @@ public:
 	double GetCounterSinceLastS();
 	double GetCounterMs();
 	double GetCounterSinceLastMs();
+
+	void TestClock();
 
 
 

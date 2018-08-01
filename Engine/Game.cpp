@@ -54,10 +54,12 @@ void Game::Go()
 void Game::UpdateModel()
 {
 	double frameTime = m_frameClock.GetCounterS();
+	m_frameClock.TestClock();
 	m_frameClock.StartCounter();
 
-	// TODO : speed in pixels per second
-	float speed = 100.f*frameTime;
+
+
+	float speed = 100.f*frameTime; // pixels per second
 
 		if (wnd.kbd.KeyIsPressed(VK_RIGHT))
 		{
