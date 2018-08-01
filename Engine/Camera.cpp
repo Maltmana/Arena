@@ -20,7 +20,7 @@ void Camera::DrawHitbox(GameWorldObject & gameWorldObject) const
 	drawable.Scale(gameWorldObject.m_scale);
 	drawable.Translate(gameWorldObject.m_position);
 
-	drawable.Translate(-m_pos);
+	drawable.Translate(-m_position);
 	drawable.Scale(m_scale);
 	m_ct.Draw(drawable);
 }

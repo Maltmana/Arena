@@ -52,12 +52,13 @@ void Game::UpdateModel()
 
 	double frameTime = m_clock.GetCounterS();
 	m_clock.StartCounter();
-	GameWorldObject activeGameWorldObject = m_camera;
+	GameWorldObject & activeGameWorldObject = m_camera;
 	float speed = 100.f*frameTime;
 
 	Command * command = m_userInputManager.HandleInput();
 	if (command)
 	{
+		activeGameWorldObject.MoveBy({ 0,1 });
 		command->execute(activeGameWorldObject, speed);
 	}
 

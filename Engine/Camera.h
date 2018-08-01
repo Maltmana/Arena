@@ -38,8 +38,6 @@ public:
 
 private:
 	static int numberOfCameras;
-	Vec2 m_pos = { 0.f,0.f };
-	float m_scale = 1.f;
 
 	CoordinateTransformer m_ct;
 	Graphics & m_graphics;
