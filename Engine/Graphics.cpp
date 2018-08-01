@@ -314,9 +314,9 @@ void Graphics::PutPixel( int x,int y,Color c )
 	pSysBuffer[Graphics::ScreenWidth * y + x] = c;
 }
 
-void Graphics::DrawLine(Vec2 p0, Vec2 p1, Color c)
+void Graphics::DrawLine(Vec2 p0, Vec2 p1, Color c) // TODO : change to berezenhems line algorithm.
 {
-	float riseOverRun = 0.f;
+	float riseOverRun = 0.f; // TODO : confirm that the float to putpixel int conversions here are not going to screw you later on. Maybe change p0 and p1 to an int vector before all this stuff??
 	if (p1.x != p0.x)
 	{
 		riseOverRun = (p1.y - p0.y) / (p1.x - p0.x);
@@ -333,7 +333,7 @@ void Graphics::DrawLine(Vec2 p0, Vec2 p1, Color c)
 			const float y = riseOverRun * x + b;
 			if ((x >= 0 && x < ScreenWidth) && (y >= 0 && y < ScreenHeight)) // TODO : get rid of this cheat and add proper algorithm cohen sutherland
 			{
-				PutPixel(x, (int)y, c);
+				PutPixel((int)x, (int)y, c);
 			}
 
 		}
@@ -353,7 +353,7 @@ void Graphics::DrawLine(Vec2 p0, Vec2 p1, Color c)
 
 			if ((x >= 0 && x < ScreenWidth) && (y >= 0 && y < ScreenHeight)) // TODO : get rid of this cheat and add proper algorithm cohen sutherland
 			{
-				PutPixel(x, (int)y, c);
+				PutPixel((int)x, (int)y, c);
 			}
 
 		}

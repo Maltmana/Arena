@@ -30,6 +30,8 @@
 #include "Camera.h"
 #include "CreatureManager.h"
 
+#include "Clock.h"
+
 class Game
 {
 public:
@@ -63,6 +65,9 @@ private:
 	Creature ss;
 
 	CreatureManager creatureManager;
+
+	Clock m_frameClock;
+
 
 	bool m_followC = false;
 	/********************************/
