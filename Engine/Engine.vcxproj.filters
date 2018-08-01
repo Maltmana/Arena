@@ -46,7 +46,7 @@
     <Filter Include="Header Files\Entities\Creatures">
       <UniqueIdentifier>{ab06d428-f752-4d45-bd29-d6eb49bd1866}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Handlers">
+    <Filter Include="Header Files\GameObjectManagers">
       <UniqueIdentifier>{7c8302e7-2f95-4e17-9a65-02c1e02cad77}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -118,9 +118,12 @@
       <Filter>Header Files\Entities\Creatures</Filter>
     </ClInclude>
     <ClInclude Include="CreatureManager.h">
-      <Filter>Header Files\Handlers</Filter>
+      <Filter>Header Files\GameObjectManagers</Filter>
     </ClInclude>
     <ClInclude Include="Clock.h">
+      <Filter>Header Files\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="Rect.h">
       <Filter>Header Files\Helper</Filter>
     </ClInclude>
   </ItemGroup>

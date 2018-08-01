@@ -29,6 +29,7 @@
 #include "Creature.h"
 #include "Camera.h"
 #include "CreatureManager.h"
+#include "Rect.h"
 
 #include "Clock.h"
 
@@ -52,7 +53,6 @@ private:
 	/*  User Variables              */
 
 	CoordinateTransformer ct;
-	std::vector<Entity> entities;	
 	Camera cam;
 
 	std::vector<Vec2> humanModel = {  {10, -10}, { 10,10 },{ -10,10 },{ -10,-10 }};

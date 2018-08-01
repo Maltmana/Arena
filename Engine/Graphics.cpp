@@ -314,6 +314,21 @@ void Graphics::PutPixel( int x,int y,Color c )
 	pSysBuffer[Graphics::ScreenWidth * y + x] = c;
 }
 
+void Graphics::DrawFilledRect(const std::vector<Vec2>& vertices, Color c)
+{
+
+	assert((int)vertices.at(0).x < (int)vertices.at(1).x); // TODO : I know this is going to get confusing and fed up during the conversino from y to y*-1
+	assert((int)vertices.at(1).y < (int)vertices.at(0).y);
+
+	for (int x = (int)vertices.at(0).x; x <= (int)vertices.at(1).x; x++)
+	{
+		for (int y = (int)vertices.at(1).y; y <= (int)vertices.at(0).y; y++)
+		{
+			PutPixel(x, y, c);
+		}
+	}
+}
+
 void Graphics::DrawLine(Vec2 p0, Vec2 p1, Color c) // TODO : change to berezenhems line algorithm.
 {
 	float riseOverRun = 0.f; // TODO : confirm that the float to putpixel int conversions here are not going to screw you later on. Maybe change p0 and p1 to an int vector before all this stuff??

@@ -20,6 +20,7 @@ public:
 	void SetScale(float scale) { m_scale = scale; };
 
 
+
 private:
 	Vec2 m_pos = { 0.f,0.f };
 	CoordinateTransformer &m_ct;

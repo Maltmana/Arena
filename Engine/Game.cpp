@@ -54,7 +54,6 @@ void Game::Go()
 void Game::UpdateModel()
 {
 	double frameTime = m_frameClock.GetCounterS();
-	m_frameClock.TestClock();
 	m_frameClock.StartCounter();
 
 
@@ -156,4 +155,8 @@ void Game::ComposeFrame()
 
 	ss.Update(cam);
 
+	const std::vector<Vec2> GUIrect = { {-200, -200}, { 0,0 } };
+	//Entity GUI(GUIrect, cam.GetPos(), Colors::Magenta);
+
+	//GUI.Update(cam);
 }

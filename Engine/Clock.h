@@ -4,7 +4,7 @@
 
 class Clock
 {
-public: // TODO : set up debug asserts or unit tests if even possible for this...
+public:
 
 	Clock();
 	void StartCounter();
@@ -13,7 +13,7 @@ public: // TODO : set up debug asserts or unit tests if even possible for this..
 	double GetCounterMs();
 	double GetCounterSinceLastMs();
 
-	void TestClock();
+	void TestClock(); // TODO : Make this a unit test
 
 
 
