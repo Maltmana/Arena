@@ -7,8 +7,7 @@ UserInputManager::UserInputManager(MainWindow & window)
 {
 	assert(numberOfUserInputManagers < 1);
 		m_a = &leftCommand;
-		m_w = &upCommand;
-		m_w->execute();
+		m_w = &upCommand;	
 
 		numberOfUserInputManagers++;
 

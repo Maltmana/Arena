@@ -32,13 +32,10 @@ int WINAPI wWinMain( HINSTANCE hInst,HINSTANCE,LPWSTR pArgs,INT )
 		{
 			Graphics graphics{ window };
 			Camera camera{ graphics };
-			const UserInputManager userInputManager{ window };
-			userInputManager.m_w->execute();
+			UserInputManager userInputManager{ window };
 			Game theGame{camera, userInputManager };
-			userInputManager.m_w->execute();
 			while(window.ProcessMessage() )
 			{
-				userInputManager.m_w->execute();
 				theGame.Go();
 			}
 		}

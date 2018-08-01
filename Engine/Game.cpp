@@ -19,26 +19,21 @@
  *	along with The Chili DirectX Framework.  If not, see <http://www.gnu.org/licenses/>.  *
  ******************************************************************************************/
 #include "Game.h"
-Game::Game(Camera & camera, const UserInputManager & userInputManager)
+Game::Game(Camera & camera, UserInputManager & userInputManager)
 	:
-	//c{ humanModel, "human", 50, 10.f, Vec2{ 0.f,0.f }, Colors::Red},
-	//o{ ogreModel, "ogre", 100, 20.f, Vec2{ 100.f,0.f }, Colors::Blue },
-	//s{ serpentModel, "serpent", 30, 40.f, Vec2{ -100.f,0.f }, Colors::Green },
-	//ss{ serpentModel, "serpent", 30, 40.f, Vec2{ -200.f,0.f }, Colors::Green },
+	c{ humanModel, "human", 50, 10.f, Vec2{ 0.f,0.f }, Colors::Red},
+	o{ ogreModel, "ogre", 100, 20.f, Vec2{ 100.f,0.f }, Colors::Blue },
+	s{ serpentModel, "serpent", 30, 40.f, Vec2{ -100.f,0.f }, Colors::Green },
+	ss{ serpentModel, "serpent", 30, 40.f, Vec2{ -200.f,0.f }, Colors::Green },
 	m_camera{ camera },
 	m_userInputManager{userInputManager}
 	
 
 {
-	//m_userInputManager.m_w->execute();
-	//userInputManager.m_w->execute();
 
-
-
-	//entities.emplace_back(Star::Make(100.f, 50.f), Vec2{ -300.f,0.f });
-	//creatureManager.AddCreature(c);
-	//creatureManager.AddCreature(o);
-	//creatureManager.AddCreature(s);
+	creatureManager.AddCreature(c);
+	creatureManager.AddCreature(o);
+	creatureManager.AddCreature(s);
 
 }
 
@@ -52,9 +47,7 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
-
-	m_userInputManager.m_w->execute();
-	//m_userInputManager.HandleInput();
+	m_userInputManager.HandleInput();
 
 	double frameTime = m_frameClock.GetCounterS();
 	m_frameClock.StartCounter();
@@ -155,9 +148,9 @@ void Game::ComposeFrame()
 		c.Update(m_camera);
 	}
 
-	//ss.Update(m_camera);
+	ss.Update(m_camera);
 
-	const std::vector<Vec2> GUIrect = { {-200, -200}, { 0,0 } };
+	//const std::vector<Vec2> GUIrect = { {-200, -200}, { 0,0 } };
 	//Entity GUI(GUIrect, camera.GetPos(), Colors::Magenta);
 
 	//GUI.Update(camera);

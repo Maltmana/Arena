@@ -32,7 +32,7 @@
 class Game
 {
 public:
-	Game( Camera & camera, const UserInputManager & UIM );
+	Game( Camera & camera, UserInputManager & UIM );
 	Game( const Game& ) = delete;
 	Game& operator=( const Game& ) = delete;
 	void Go();
@@ -41,23 +41,26 @@ private:
 	void UpdateModel();
 
 private:
-
-	Camera & m_camera;
-	const UserInputManager & m_userInputManager;
-
+	// FIRST ORDER
 	std::vector<Vec2> humanModel = {  {10, -10}, { 10,10 },{ -10,10 },{ -10,-10 }};
 	std::vector<Vec2> ogreModel = {  {20, -20}, { 20,20 },{ -20,20 },{ -20,-20 } };
 	std::vector<Vec2> serpentModel = {{ 30, -10 }, {30,10 },{ -30,10 },{ -30,-10 }};
 
-	//Creature c;
-	//Creature o;
-	//Creature s;
-	//Creature ss;
+	// SECOND ORDER
 
-	CreatureManager creatureManager;
+	Creature c;
+	Creature o;
+	Creature s;
+	Creature ss;
+
+
 
 	Clock m_frameClock;
 
 	bool m_followC = false;
+
+	Camera & m_camera;
+	UserInputManager & m_userInputManager;
+	CreatureManager creatureManager;
 
 };
