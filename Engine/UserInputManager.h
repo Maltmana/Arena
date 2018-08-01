@@ -46,8 +46,11 @@ public:
 	Command * m_A = 0;
 	Command * m_D = 0;
 
-	static LeftCommand leftCommand;
 	static UpCommand upCommand;
+	static DownCommand downCommand;
+	static LeftCommand leftCommand;
+	static RightCommand rightCommand;
+
 
 
 	static int numberOfUserInputManagers;

@@ -24,7 +24,10 @@ public:
 class DownCommand : public Command
 {
 public:
-	//virtual void execute() { MoveCameraDown(); }
+	virtual void execute(GameWorldObject & gameWorldObject, const float & offsetRate) override
+	{
+		gameWorldObject.MoveBy({ 0, -offsetRate });
+	}
 };
 
 class LeftCommand : public Command
@@ -39,7 +42,10 @@ public:
 class RightCommand : public Command
 {
 public:
-	//virtual void execute() { MoveCameraRight(); }
+	virtual void execute(GameWorldObject & gameWorldObject, const float & offsetRate) override
+	{
+		gameWorldObject.MoveBy({ offsetRate, 0 });
+	}
 };
 
 class NullCommand : public Command
