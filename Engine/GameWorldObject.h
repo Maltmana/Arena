@@ -13,11 +13,12 @@ class GameWorldObject
 {
 public:
 
-	Vec2 m_position;
-	Vec2 m_velocity;
-	float m_scale;
+	Vec2 m_position = { 0,0 };
+	Vec2 m_velocity = { 0,0 };
+	float m_scale = 1.0f;
 
-	GameWorldObject(Vec2 position = { 0,0 }, Vec2 velocity = { 0,0 }, GraphicsComponent * graphicsComponent = nullptr, LogicComponent * logicComponent = nullptr, InputComponent * inputComponent = nullptr);
+	//Vec2 position = { 0,0 }, Vec2 velocity = { 0,0 }, 
+	GameWorldObject(GraphicsComponent * graphicsComponent = nullptr, InputComponent * inputComponent = nullptr, LogicComponent * logicComponent = nullptr);
 
 	//const Vec2 & GetPos() const { return m_position; };
 	//const float GetScale() const { return m_scale; };

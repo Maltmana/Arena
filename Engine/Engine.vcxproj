@@ -147,7 +147,7 @@
     <ClInclude Include="Command.h" />
     <ClInclude Include="CoordinateTransformer.h" />
     <ClInclude Include="Creature.h" />
-    <ClInclude Include="CreatureManager.h" />
+    <ClInclude Include="CreatureHandler.h" />
     <ClInclude Include="Drawable.h" />
     <ClInclude Include="DXErr.h" />
     <ClInclude Include="GameWorldObject.h" />
@@ -173,7 +173,6 @@
     <ClCompile Include="COMInitializer.cpp" />
     <ClCompile Include="CoordinateTransformer.cpp" />
     <ClCompile Include="Creature.cpp" />
-    <ClCompile Include="CreatureManager.cpp" />
     <ClCompile Include="Drawable.cpp" />
     <ClCompile Include="DXErr.cpp" />
     <ClCompile Include="GameWorldObject.cpp" />

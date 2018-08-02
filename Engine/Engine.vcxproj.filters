@@ -37,9 +37,6 @@
     <Filter Include="Source Files\ComponentInterfaces">
       <UniqueIdentifier>{e7a686ab-2104-4c48-80ca-dcbdefb35a28}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\GameObjectManagers">
-      <UniqueIdentifier>{7c8302e7-2f95-4e17-9a65-02c1e02cad77}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\SuperComponents">
       <UniqueIdentifier>{a96754d4-8fbd-4da7-b2f9-f08560719e19}</UniqueIdentifier>
     </Filter>
@@ -54,6 +51,9 @@
     </Filter>
     <Filter Include="Header Files\Components">
       <UniqueIdentifier>{8ddda724-4f7f-470e-b3b7-c473781773e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjectHandlers">
+      <UniqueIdentifier>{7c8302e7-2f95-4e17-9a65-02c1e02cad77}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -117,9 +117,6 @@
     <ClInclude Include="Creature.h">
       <Filter>Header Files\GameWorldObjects\Creatures</Filter>
     </ClInclude>
-    <ClInclude Include="CreatureManager.h">
-      <Filter>Header Files\GameObjectManagers</Filter>
-    </ClInclude>
     <ClInclude Include="Clock.h">
       <Filter>Header Files\Helper</Filter>
     </ClInclude>
@@ -140,6 +137,9 @@
     </ClInclude>
     <ClInclude Include="LogicComponent.h">
       <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="CreatureHandler.h">
+      <Filter>Header Files\GameObjectHandlers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -183,9 +183,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Creature.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CreatureManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Clock.cpp">

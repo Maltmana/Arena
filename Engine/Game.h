@@ -25,10 +25,10 @@
 #include "GameWorldObject.h"
 #include "Creature.h"
 #include "Camera.h"
-#include "CreatureManager.h"
 #include "Rect.h"
 #include "Clock.h"
 #include "UserInputManager.h"
+#include "CreatureHandler.h"
 class Game
 {
 public:
@@ -44,22 +44,22 @@ private:
 	// SUPER COMPONENTS
 	Camera & m_camera;
 	UserInputManager & m_userInputManager;
+
+	// GAME OBJECT HANDLERS
+	//CreatureHandler m_creatureHandler;
+
 	
 	// FIRST ORDER
 	Clock m_clock;
-	std::vector<Vec2> humanModel = {  {10, -10}, { 10,10 },{ -10,10 },{ -10,-10 }};
-	std::vector<Vec2> ogreModel = {  {20, -20}, { 20,20 },{ -20,20 },{ -20,-20 } };
-	std::vector<Vec2> serpentModel = {{ 30, -10 }, {30,10 },{ -30,10 },{ -30,-10 }};
 
 	// SECOND ORDER
 
-	//Creature c;
-	//Creature o;
-	//Creature s;
-	//Creature ss;
+	GameWorldObject c;
+	GameWorldObject o;
+	GameWorldObject s;
+	GameWorldObject ss;
 
-	//CreatureManager creatureManager;
-
+	std::vector<GameWorldObject> gameWorldObjectVector;
 
 	
 

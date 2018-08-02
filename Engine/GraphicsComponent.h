@@ -9,7 +9,7 @@ class Camera;
 class GraphicsComponent
 {
 public:
-	GraphicsComponent( Color & color)
+	GraphicsComponent( const Color & color)
 		:
 		m_color{color}
 	{}

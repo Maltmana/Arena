@@ -21,20 +21,13 @@
 #include "Game.h"
 Game::Game(Camera & camera, UserInputManager & userInputManager)
 	:
-	//c{ humanModel, "human", 50, 10.f, Vec2{ 0.f,0.f }, Colors::Red},
-	//o{ ogreModel, "ogre", 100, 20.f, Vec2{ 100.f,0.f }, Colors::Blue },
-	//s{ serpentModel, "serpent", 30, 40.f, Vec2{ -100.f,0.f }, Colors::Green },
-	//ss{ serpentModel, "serpent", 30, 40.f, Vec2{ -200.f,0.f }, Colors::Green },
 	m_camera{ camera },
 	m_userInputManager{userInputManager}
 	
 
 {
 
-	//creatureManager.AddCreature(c);
-	//creatureManager.AddCreature(o);
-	//creatureManager.AddCreature(s);
-
+	//m_creatureHandler.CreateHuman();
 }
 
 void Game::Go()
@@ -50,7 +43,7 @@ void Game::UpdateModel()
 
 	// TODO : handle logic components.
 
-	double frameTime = m_clock.GetCounterS();
+	float frameTime = m_clock.GetCounterS();
 	m_clock.StartCounter();
 	GameWorldObject & activeGameWorldObject = m_camera;
 	float speed = 100.f*frameTime;
