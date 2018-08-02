@@ -46,7 +46,7 @@ private:
 	UserInputManager & m_userInputManager;
 
 	// GAME OBJECT HANDLERS
-	//CreatureHandler m_creatureHandler;
+	CreatureHandler m_creatureHandler;
 
 	
 	// FIRST ORDER

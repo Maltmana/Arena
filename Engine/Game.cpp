@@ -55,55 +55,7 @@ void Game::UpdateModel()
 		command->execute(activeGameWorldObject, speed);
 	}
 
-	/*
-	float speed = 100.f*frameTime; // pixels per second
-
-		if (wnd.kbd.KeyIsPressed(VK_RIGHT))
-		{
-			if (m_followC)
-			{
-				creatureManager.creatures.back().SetPos(creatureManager.creatures.back().GetPos() - Vec2{speed, 0.f});
-			}
-			else
-			{
-				m_camera.MoveBy({ speed,0.f });
-			}
-
-		}
-		if (wnd.kbd.KeyIsPressed(VK_LEFT))
-		{
-			if (m_followC)
-			{
-				creatureManager.creatures.back().SetPos(creatureManager.creatures.back().GetPos() - Vec2{ -speed, 0.f });
-			}
-			else
-			{
-				m_camera.MoveBy({ -speed,0.f });
-			}
-		}
-		if (wnd.kbd.KeyIsPressed(VK_UP))
-		{
-			if (m_followC)
-			{
-				creatureManager.creatures.back().SetPos(creatureManager.creatures.back().GetPos() - Vec2{ 0.f, speed});
-			}
-			else
-			{
-				m_camera.MoveBy({ 0.f,speed });
-			}
-		}
-		if (wnd.kbd.KeyIsPressed(VK_DOWN))
-		{
-			if (m_followC)
-			{
-				creatureManager.creatures.back().SetPos(creatureManager.creatures.back().GetPos() - Vec2{ 0.f,-speed });
-			}
-			else
-			{
-				m_camera.MoveBy({ 0.f,-speed });
-			}
-		}
-
+/*
 		if (wnd.kbd.KeyIsPressed(VK_RETURN))
 		{
 			bool oldFollowC = m_followC;
