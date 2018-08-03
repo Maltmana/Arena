@@ -27,7 +27,7 @@ Game::Game(Camera & camera, UserInputManager & userInputManager)
 
 {
 
-	//m_creatureHandler.CreateHuman();
+	m_creatureHandler.CreateHuman();
 }
 
 void Game::Go()
@@ -102,10 +102,10 @@ void Game::ComposeFrame()
 
 	// TODO : Handle graphics components.
 
-	//for (auto & c : creatureManager.creatures)
-	//{
-	//	c.Update(m_camera);
-	//}
+	for (auto & c : m_creatureHandler.creatures)
+	{
+		c.Update(m_camera);
+	}
 
 	/*ss.Update(m_camera);*/
 

@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 
+/* hitbox for now */
 class LogicComponent
 {
 public:
