@@ -9,7 +9,10 @@ class Camera;
 class GraphicsComponent
 {
 public:
-	GraphicsComponent( const Color & color)
+	GraphicsComponent()
+	{}
+
+	GraphicsComponent( const Color color)
 		:
 		m_color{color}
 	{}
@@ -18,7 +21,7 @@ public:
 
 	void DrawHitbox(GameWorldObject & gameWorldObject, Camera & camera) const;
 
-	const Color & GetColor() const { return m_color; };
+	const Color GetColor() const { return m_color; };
 
 	Color m_color;
 };

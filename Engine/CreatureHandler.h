@@ -1,7 +1,7 @@
 #pragma once
-#include <string>
-#include "Vec2.h"
+#include "pch.h"
 #include "GameWorldObject.h"
+
 
 class CreatureHandler
 {
@@ -9,36 +9,34 @@ public:
 
 	// these create specialized objects with special components that define the creature made
 
-	GameWorldObject CreateOgre()
+	std::unique_ptr<GameWorldObject> CreateOgre() const
 	{
-		std::vector<Vec2> ogreModel = { { 20, -20 },{ 20,20 },{ -20,20 },{ -20,-20 } };
+		std::vector<Vec2> const ogreModel = { { 20, -20 },{ 20,20 },{ -20,20 },{ -20,-20 } };
 
-		GameWorldObject ogre{ CreateCreature(Colors::Blue, ogreModel) };
-
-		return 	creatures.emplace_back(ogre);
+		return CreateCreature(Colors::Blue, ogreModel, "ogre");
 	}
-	GameWorldObject CreateSerpent()
+	std::unique_ptr<GameWorldObject> CreateSerpent() const
 	{
-		std::vector<Vec2> serpentModel = { { 30, -10 },{ 30,10 },{ -30,10 },{ -30,-10 } };
+		std::vector<Vec2> const serpentModel = { { 30, -10 },{ 30,10 },{ -30,10 },{ -30,-10 } };
 
-		GameWorldObject serpent{ CreateCreature(Colors::Green, serpentModel) };
-
-		return creatures.emplace_back(serpent);
+		return CreateCreature(Colors::Green, serpentModel, "serpent");
 	}
-	GameWorldObject CreateHuman()
+	std::unique_ptr<GameWorldObject> CreateHuman() const
 	{
-		std::vector<Vec2> humanModel = { { 10, -10 },{ 10,10 },{ -10,10 },{ -10,-10 } };
+		std::vector<Vec2> const humanModel = { { 10, -10 },{ 10,10 },{ -10,10 },{ -10,-10 } };
 
-		GameWorldObject human{ CreateCreature(Colors::White, humanModel) };
-
-		return creatures.emplace_back(human);
+		return CreateCreature(Colors::White, humanModel, "human");
 	}
 
-	GameWorldObject & CreateCreature(const Color & color, std::vector<Vec2> hitbox)
+	std::unique_ptr<GameWorldObject> CreateCreature(Color const color, std::vector<Vec2> const hitbox, std::string const typeOf) const
 	{
+		return std::make_unique<GameWorldObject>(std::make_unique<GraphicsComponent>((Colors::Green), std::make_unique<InputComponent>(), std::make_unique<LogicComponent>(hitbox, typeOf)));
+	}
 
-		return GameWorldObject(new GraphicsComponent(Colors::Green), new InputComponent(), new LogicComponent(hitbox));
-
+	std::unique_ptr<GameWorldObject> MoveToContainer(std::unique_ptr<GameWorldObject> creature)
+	{
+		creatures.emplace_back(std::move(creature));
+		assert(creature);
 	}
 
 	std::vector<GameWorldObject> creatures;

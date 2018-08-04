@@ -141,6 +141,9 @@
     <ClInclude Include="CreatureHandler.h">
       <Filter>Header Files\GameObjectHandlers</Filter>
     </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">

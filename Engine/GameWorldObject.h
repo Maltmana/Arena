@@ -1,10 +1,11 @@
 #pragma once
-#include "Vec2.h"
-#include <assert.h>
 
+#include "pch.h"
 #include "GraphicsComponent.h"
 #include "LogicComponent.h"
 #include "InputComponent.h"
+
+
 
 
 class Drawable;
@@ -16,9 +17,9 @@ public:
 	Vec2 m_position = { 0,0 };
 	Vec2 m_velocity = { 0,0 };
 	float m_scale = 1.0f;
-
-	//Vec2 position = { 0,0 }, Vec2 velocity = { 0,0 }, 
-	GameWorldObject(GraphicsComponent * graphicsComponent = nullptr, InputComponent * inputComponent = nullptr, LogicComponent * logicComponent = nullptr);
+		
+	GameWorldObject() {};
+	GameWorldObject(std::unique_ptr<GraphicsComponent> graphicsComponent, std::unique_ptr<InputComponent> inputComponent, std::unique_ptr<LogicComponent> logicComponent);
 
 	//const Vec2 & GetPos() const { return m_position; };
 	//const float GetScale() const { return m_scale; };
@@ -34,10 +35,10 @@ public:
 	void Update(Camera & camera); // TODO : put in cpp
 
 
-private:
-	GraphicsComponent * m_graphicsComponent;
-	LogicComponent * m_logicComponent;
-	InputComponent * m_inputComponent;
+	// these auto initialize to null
+	std::unique_ptr<GraphicsComponent> m_graphicsComponent;
+	std::unique_ptr<LogicComponent> m_logicComponent;
+	std::unique_ptr<InputComponent> m_inputComponent;
 
 
 

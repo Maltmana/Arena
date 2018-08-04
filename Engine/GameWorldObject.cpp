@@ -1,25 +1,18 @@
 #include "GameWorldObject.h"
 #include "Drawable.h"
 
+// Automatically initializes component unique_ptrs to null
 
-GameWorldObject::GameWorldObject(GraphicsComponent * graphicsComponent, InputComponent * inputComponent, LogicComponent * logicComponent)
+
+GameWorldObject::GameWorldObject(std::unique_ptr<GraphicsComponent> graphicsComponent, std::unique_ptr<InputComponent> inputComponent, std::unique_ptr<LogicComponent> logicComponent )
 	:
-	m_graphicsComponent{ graphicsComponent },
-	m_logicComponent{ logicComponent },
-	m_inputComponent{inputComponent}
+	m_graphicsComponent( std::move(graphicsComponent) ),
+	m_inputComponent( std::move(inputComponent) ),
+	m_logicComponent( std::move(logicComponent) )
 {
 }
 
 
-//GameWorldObject::GameWorldObject(Vec2 position, Vec2 velocity, GraphicsComponent * graphicsComponent, LogicComponent * logicComponent, InputComponent * inputComponent)
-//	:
-//	m_position{ position },
-//	m_velocity{velocity},
-//	m_graphicsComponent{ graphicsComponent },
-//	m_logicComponent{ logicComponent },
-//	m_inputComponent{inputComponent}
-//{
-//}
 
 void GameWorldObject::Update(Camera & camera)
 {

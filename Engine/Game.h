@@ -54,12 +54,7 @@ private:
 
 	// SECOND ORDER
 
-	GameWorldObject c;
-	GameWorldObject o;
-	GameWorldObject s;
-	GameWorldObject ss;
 
-	std::vector<GameWorldObject> gameWorldObjectVector;
 
 	
 
