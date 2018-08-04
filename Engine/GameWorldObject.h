@@ -18,7 +18,7 @@ public:
 	Vec2 m_velocity = { 0,0 };
 	float m_scale = 1.0f;
 		
-	GameWorldObject() {};
+	GameWorldObject();
 	GameWorldObject(std::unique_ptr<GraphicsComponent> graphicsComponent, std::unique_ptr<InputComponent> inputComponent, std::unique_ptr<LogicComponent> logicComponent);
 
 	//const Vec2 & GetPos() const { return m_position; };
@@ -27,8 +27,8 @@ public:
 	//void SetScale(const float scale) { m_scale = scale; };
 
 	// TODO : Set these into the graphics component? or a different level of inheritance?
-	const std::vector<Vec2> & GetHitbox() const { return m_logicComponent->getHitbox(); };
-	const Color & GetColor() const { return m_graphicsComponent->GetColor(); };
+	 std::vector<Vec2> GetHitbox() const { return m_logicComponent->getHitbox(); };
+	 Color GetColor() const { return m_graphicsComponent->GetColor(); };
 
 	void MoveBy(const Vec2 offset);
 

@@ -15,6 +15,7 @@ public:
 	Camera(Graphics & graphics);
 	Camera(const Camera & camera)
 		:
+		GameWorldObject(),
 		m_ct{camera.m_ct},
 		m_graphics{camera.m_graphics}
 	{

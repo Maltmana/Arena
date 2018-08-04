@@ -4,6 +4,10 @@
 // Automatically initializes component unique_ptrs to null
 
 
+GameWorldObject::GameWorldObject()
+{
+}
+
 GameWorldObject::GameWorldObject(std::unique_ptr<GraphicsComponent> graphicsComponent, std::unique_ptr<InputComponent> inputComponent, std::unique_ptr<LogicComponent> logicComponent )
 	:
 	m_graphicsComponent( std::move(graphicsComponent) ),

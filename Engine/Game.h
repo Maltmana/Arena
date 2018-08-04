@@ -29,6 +29,7 @@
 #include "Clock.h"
 #include "UserInputManager.h"
 #include "CreatureHandler.h"
+
 class Game
 {
 public:
