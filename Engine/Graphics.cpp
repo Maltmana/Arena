@@ -362,7 +362,7 @@ void Graphics::DrawLine(Vec2 p0, Vec2 p1, Color c) // TODO : change to berezenhe
 
 		const float runOverRise = (p1.x - p0.x) / (p1.y - p0.y);
 		const float bInverse = p0.x - runOverRise * p0.y;
-		for (int y = p0.y; y < p1.y; y++)
+		for (int y = (int)p0.y; y < (int)p1.y; y++)
 		{
 			const float x = runOverRise * y + bInverse;
 
@@ -384,39 +384,6 @@ void Graphics::DrawClosedPolyline(const std::vector<Vec2>& verts, Color c)
 	}
 	DrawLine(verts.back(), verts.front(), c);
 }
-
-void Graphics::FillClosedPolylineScanlines(const std::vector<Vec2>& verts, Color c)
-{
-	float yMin = verts.at(0).y;
-	float oldY = 0;
-	for (Vec2 v : verts)
-	{
-		if (v.y < oldY)
-		{
-			yMin = v.y;
-		}
-		oldY = v.y;
-	}
-
-	float yMax = verts.at(0).y;
-	for (Vec2 v : verts)
-	{
-		if (v.y > oldY)
-		{
-			yMax = v.y;
-		}
-		oldY = v.y;
-	}
-
-	assert(yMax >= yMin);
-
-	for (int y = (int)yMax; y < (int)yMin; y--) //hmm or do we add y to go down??
-	{
-
-	}
-
-}
-
 
 
 //////////////////////////////////////////////////
