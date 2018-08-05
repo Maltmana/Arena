@@ -30,14 +30,14 @@ public:
 
 	std::unique_ptr<GameWorldObject> CreateCreature(Color const color, std::vector<Vec2> const hitbox, std::string const typeOf) const
 	{
-		return std::make_unique<GameWorldObject>(std::make_unique<GraphicsComponent>(color, std::make_unique<InputComponent>(), std::make_unique<LogicComponent>(hitbox, typeOf)));
+		return std::make_unique<GameWorldObject>(std::make_unique<GraphicsComponent>(color), std::make_unique<InputComponent>(), std::make_unique<LogicComponent>(hitbox, typeOf));
 	}
 
 	std::unique_ptr<GameWorldObject> MoveToContainer(std::unique_ptr<GameWorldObject> creature)
 	{
-		creatures.emplace_back(std::move(creature));
+		creatures.push_back(std::move(creature));
 		assert(creature);
 	}
 
-	std::vector<GameWorldObject> creatures;
+	std::vector<std::unique_ptr<GameWorldObject>> creatures;
 };

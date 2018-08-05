@@ -104,7 +104,7 @@ void Game::ComposeFrame()
 
 	for (auto & c : m_creatureHandler.creatures)
 	{
-		c.Update(m_camera);
+		//c.Update(m_camera);
 	}
 
 	/*ss.Update(m_camera);*/
