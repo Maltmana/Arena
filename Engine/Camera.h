@@ -13,7 +13,7 @@ public:
 
 	Camera() = delete;
 	Camera(Graphics & graphics);
-	Camera(const Camera & camera)
+	Camera(const Camera & camera) // TODO : put this in cpp
 		:
 		GameWorldObject(),
 		m_ct{camera.m_ct},

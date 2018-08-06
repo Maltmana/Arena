@@ -34,14 +34,16 @@ class Game
 {
 public:
 	Game( Camera & camera, UserInputManager & UIM );
+
 	Game( const Game& ) = delete;
 	Game& operator=( const Game& ) = delete;
+
 	void Go();
+
 private:
 	void ComposeFrame();
 	void UpdateModel();
 
-private:
 	// SUPER COMPONENTS
 	Camera & m_camera;
 	UserInputManager & m_userInputManager;

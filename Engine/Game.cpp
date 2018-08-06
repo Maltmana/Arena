@@ -23,10 +23,7 @@ Game::Game(Camera & camera, UserInputManager & userInputManager)
 	:
 	m_camera{ camera },
 	m_userInputManager{userInputManager}
-	
-
 {
-
 	m_creatureHandler.CreateHuman();
 }
 
