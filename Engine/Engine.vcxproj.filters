@@ -19,47 +19,38 @@
     <Filter Include="Header Files\Framework">
       <UniqueIdentifier>{26162340-686e-4bbe-bbdd-f6f8418f2d86}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Framework">
-      <UniqueIdentifier>{c906eedc-84b1-41dc-b941-30bc33cb8267}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Helper">
       <UniqueIdentifier>{67ba52c5-082b-4d9e-9c29-3b012d1525d6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\RenderingPipeline">
-      <UniqueIdentifier>{ebd35961-6a90-438b-bdfe-18b3d186d928}</UniqueIdentifier>
+    <Filter Include="Header Files\Arena">
+      <UniqueIdentifier>{1bd4293e-650e-413d-bd6e-19f9496058d5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\RenderingPipeline">
-      <UniqueIdentifier>{632f62ab-8dc3-439c-ab0f-2ede23293fd3}</UniqueIdentifier>
+    <Filter Include="Header Files\Arena\GameObjectHandlers">
+      <UniqueIdentifier>{7c8302e7-2f95-4e17-9a65-02c1e02cad77}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Entities">
-      <UniqueIdentifier>{855ed093-27ef-4d98-90fa-240bf019639a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\ComponentInterfaces">
-      <UniqueIdentifier>{e7a686ab-2104-4c48-80ca-dcbdefb35a28}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\SuperComponents">
+    <Filter Include="Header Files\Arena\SuperComponents">
       <UniqueIdentifier>{a96754d4-8fbd-4da7-b2f9-f08560719e19}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\SuperComponents\UserInputManager">
+    <Filter Include="Header Files\Arena\SuperComponents\UserInputManager">
       <UniqueIdentifier>{a85bf60b-419d-4cb6-9d3b-1d3fbbbb31e8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\GameWorldObjects">
-      <UniqueIdentifier>{eb43cae5-94c2-4d35-b284-02f2d4f4bacf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\GameWorldObjects\Creatures">
-      <UniqueIdentifier>{ab06d428-f752-4d45-bd29-d6eb49bd1866}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Components">
+    <Filter Include="Header Files\Arena\GOComponents">
       <UniqueIdentifier>{8ddda724-4f7f-470e-b3b7-c473781773e0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\GameObjectHandlers">
-      <UniqueIdentifier>{7c8302e7-2f95-4e17-9a65-02c1e02cad77}</UniqueIdentifier>
+    <Filter Include="Header Files\Arena\SuperComponents\Camera">
+      <UniqueIdentifier>{696d7ba6-5be1-4ebf-be24-2734df202411}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Arena\SuperComponents\Camera\GraphicsPipeline">
+      <UniqueIdentifier>{ebd35961-6a90-438b-bdfe-18b3d186d928}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Arena\GameObjects">
+      <UniqueIdentifier>{eb43cae5-94c2-4d35-b284-02f2d4f4bacf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Arena\GameObjects\Creatures">
+      <UniqueIdentifier>{ab06d428-f752-4d45-bd29-d6eb49bd1866}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ChiliException.h">
       <Filter>Header Files\Framework</Filter>
     </ClInclude>
@@ -97,10 +88,10 @@
       <Filter>Header Files\Framework</Filter>
     </ClInclude>
     <ClInclude Include="Drawable.h">
-      <Filter>Header Files\RenderingPipeline</Filter>
+      <Filter>Header Files\Arena\SuperComponents\Camera\GraphicsPipeline</Filter>
     </ClInclude>
     <ClInclude Include="CoordinateTransformer.h">
-      <Filter>Header Files\RenderingPipeline</Filter>
+      <Filter>Header Files\Arena\SuperComponents\Camera\GraphicsPipeline</Filter>
     </ClInclude>
     <ClInclude Include="Vec2.h">
       <Filter>Header Files\Helper</Filter>
@@ -109,13 +100,13 @@
       <Filter>Header Files\Helper</Filter>
     </ClInclude>
     <ClInclude Include="GraphicsComponent.h">
-      <Filter>Header Files\Components</Filter>
+      <Filter>Header Files\Arena\GOComponents</Filter>
     </ClInclude>
     <ClInclude Include="InputComponent.h">
-      <Filter>Header Files\Components</Filter>
+      <Filter>Header Files\Arena\GOComponents</Filter>
     </ClInclude>
     <ClInclude Include="Creature.h">
-      <Filter>Header Files\GameWorldObjects\Creatures</Filter>
+      <Filter>Header Files\Arena\GameObjects\Creatures</Filter>
     </ClInclude>
     <ClInclude Include="Clock.h">
       <Filter>Header Files\Helper</Filter>
@@ -123,26 +114,29 @@
     <ClInclude Include="Rect.h">
       <Filter>Header Files\Helper</Filter>
     </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>Header Files\SuperComponents</Filter>
-    </ClInclude>
     <ClInclude Include="UserInputManager.h">
-      <Filter>Header Files\SuperComponents\UserInputManager</Filter>
+      <Filter>Header Files\Arena\SuperComponents\UserInputManager</Filter>
     </ClInclude>
     <ClInclude Include="Command.h">
-      <Filter>Header Files\SuperComponents\UserInputManager</Filter>
+      <Filter>Header Files\Arena\SuperComponents\UserInputManager</Filter>
     </ClInclude>
     <ClInclude Include="GameWorldObject.h">
-      <Filter>Header Files\GameWorldObjects</Filter>
+      <Filter>Header Files\Arena\GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="LogicComponent.h">
-      <Filter>Header Files\Components</Filter>
+      <Filter>Header Files\Arena\GOComponents</Filter>
     </ClInclude>
     <ClInclude Include="CreatureHandler.h">
-      <Filter>Header Files\GameObjectHandlers</Filter>
+      <Filter>Header Files\Arena\GameObjectHandlers</Filter>
     </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\Arena</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files\Arena\SuperComponents\Camera</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
