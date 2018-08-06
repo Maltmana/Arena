@@ -20,17 +20,11 @@ public:
 		std::unique_ptr<InputComponent> inputComponent,
 		std::unique_ptr<LogicComponent> logicComponent);
 
-	// Calls update on the graphics component
+	// UNIMPLEMENTED Calls update on the graphics component
 	void GraphicsUpdate(Camera const & camera) const;
-
-	// TODO : Set these into the graphics component? or a different level of inheritance?
-	 std::vector<Vec2> GetHitbox() const { return m_logicComponent->getHitbox(); };
-	 Color GetColor() const { return m_graphicsComponent->GetColor(); };
 
 	 Vec2 m_position = { 0,0 };
 	 float m_scale = 1.0f; // scale is for camera which is also a GO
-
-private:
 
 	std::unique_ptr<GraphicsComponent> m_graphicsComponent;
 	std::unique_ptr<LogicComponent> m_logicComponent;

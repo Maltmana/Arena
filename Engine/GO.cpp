@@ -1,8 +1,6 @@
 #include "GO.h"
 #include "Drawable.h"
 
-// Automatically initializes component unique_ptrs to null
-
 
 GO::GO()
 {
@@ -18,7 +16,6 @@ GO::GO(std::unique_ptr<GraphicsComponent> graphicsComponent, std::unique_ptr<Inp
 
 void GO::GraphicsUpdate(Camera const & camera) const
 {
-	//m_graphicsComponent->Update(*this, camera); // TODO : remove raw pointer.
 }
 
 

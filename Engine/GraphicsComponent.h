@@ -1,27 +1,24 @@
 #pragma once
 #include "Colors.h"
 
-
 class GO;
 class Camera;
 
 /*Sole interactor with camera class which is the sole interactor with gfx via the rendering pipeline. Sends data to be processed by Camera. color only for now */
 class GraphicsComponent
 {
+
 public:
-	GraphicsComponent()
-	{}
 
-	GraphicsComponent( const Color color)
-		:
-		m_color{color}
-	{}
+	GraphicsComponent();
+	// Sets color of hitbox
+	GraphicsComponent(Color const hitboxColor);
 
-	void Update(GO & gO, Camera & camera);
+	Color GetHitboxColor() const { return m_hitboxColor; };
+	void SetHitboxColor(Color const hitboxColor) { m_hitboxColor = hitboxColor; };
 
-	void DrawHitbox(GO & gO, Camera & camera) const;
+private:
 
-	const Color GetColor() const { return m_color; };
+	Color m_hitboxColor;
 
-	Color m_color;
 };

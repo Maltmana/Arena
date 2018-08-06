@@ -188,7 +188,10 @@
     <ClCompile Include="UserInputManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameWorldObject.cpp">
+    <ClCompile Include="GO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LogicComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

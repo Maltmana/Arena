@@ -5,17 +5,12 @@
 class LogicComponent
 {
 public:
-	LogicComponent(std::vector<Vec2> hitbox, std::string typeOf)
-		:
-		m_hitbox{ hitbox },
-		m_typeOf{ typeOf }
-	{
-	
-	}
-	const std::vector<Vec2> & getHitbox() const { return m_hitbox; };
+	LogicComponent(std::vector<Vec2> hitbox, std::string typeName);
 
-	std::string m_typeOf;
+	std::vector<Vec2> getHitbox() const { return m_hitbox; };
+	std::string getTypeName() const { return m_typeName; };
 
 private:
+	std::string m_typeName;
 	std::vector<Vec2> m_hitbox;
 };

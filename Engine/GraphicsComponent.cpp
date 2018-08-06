@@ -1,13 +1,11 @@
 #include "GraphicsComponent.h"
-#include "Camera.h"
-#include "GO.h"
 
-void GraphicsComponent::Update(GO & gO, Camera & camera)
+GraphicsComponent::GraphicsComponent()
 {
-	DrawHitbox(gO, camera);
 }
 
-void GraphicsComponent::DrawHitbox(GO & gO, Camera & camera) const
-{
-	camera.DrawHitbox(gO);
-}
+GraphicsComponent::GraphicsComponent(Color const hitboxColor)
+	:
+	m_hitboxColor{ hitboxColor }
+{}
+
