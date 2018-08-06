@@ -2,51 +2,41 @@
 
 #include "pch.h"
 #include "GraphicsComponent.h"
-#include "LogicComponent.h"
 #include "InputComponent.h"
-
-
-
+#include "LogicComponent.h"
 
 class Drawable;
 
 class GameWorldObject 
 {
-public:
 
-	Vec2 m_position = { 0,0 };
-	Vec2 m_velocity = { 0,0 };
-	float m_scale = 1.0f;
-		
+public:		
+
+	// Initializes unique_ptr components to null
 	GameWorldObject();
-	GameWorldObject(std::unique_ptr<GraphicsComponent> graphicsComponent, std::unique_ptr<InputComponent> inputComponent, std::unique_ptr<LogicComponent> logicComponent);
 
-	//const Vec2 & GetPos() const { return m_position; };
-	//const float GetScale() const { return m_scale; };
-	//void SetPos(const Vec2& position) { m_position = position; };
-	//void SetScale(const float scale) { m_scale = scale; };
+	// Calls std::move on each parameter
+	GameWorldObject(std::unique_ptr<GraphicsComponent> graphicsComponent,
+		std::unique_ptr<InputComponent> inputComponent,
+		std::unique_ptr<LogicComponent> logicComponent);
+
+	// Calls update on the graphics component
+	void GraphicsUpdate(Camera const & camera) const;
 
 	// TODO : Set these into the graphics component? or a different level of inheritance?
 	 std::vector<Vec2> GetHitbox() const { return m_logicComponent->getHitbox(); };
 	 Color GetColor() const { return m_graphicsComponent->GetColor(); };
 
-	void MoveBy(const Vec2 offset);
+	 Vec2 m_position = { 0,0 };
+	 float m_scale = 1.0f; // scale is for camera which is also a GameWorldObject
 
-	void Update(Camera & camera); // TODO : put in cpp
+private:
 
-
-	// these auto initialize to null
 	std::unique_ptr<GraphicsComponent> m_graphicsComponent;
 	std::unique_ptr<LogicComponent> m_logicComponent;
 	std::unique_ptr<InputComponent> m_inputComponent;
 
 
 
+
 };
-
-
-
-//	// TODO : Set these into the graphics component? or a different level of inheritance?
-//	const std::vector<Vec2> & GetHitbox() const { return m_hitbox; };
-//	const Color & GetColor() const { return m_graphicsComponent.GetColor(); };
-

@@ -5,7 +5,7 @@ Game::Game(Camera & camera, UserInputManager & userInputManager)
 	m_camera{ camera },
 	m_userInputManager{userInputManager}
 {
-	m_creatureHandler.CreateHuman();
+	m_creatureHandler.MoveToContainer(m_creatureHandler.CreateHuman());
 }
 
 void Game::UpdateModel()
@@ -21,7 +21,6 @@ void Game::UpdateModel()
 	Command * command = m_userInputManager.HandleInput();
 	if (command)
 	{
-		activeGameWorldObject.MoveBy({ 0,1 });
 		command->execute(activeGameWorldObject, (float)speed);
 	}
 
@@ -74,7 +73,7 @@ void Game::ComposeFrame()
 
 	for (auto & c : m_creatureHandler.creatures)
 	{
-		//c.Update(m_camera);
+		c->GraphicsUpdate(m_camera);
 	}
 
 	/*ss.Update(m_camera);*/

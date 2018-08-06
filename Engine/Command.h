@@ -16,7 +16,7 @@ class UpCommand : public Command
 public:
 	virtual void execute(GameWorldObject & gameWorldObject, const float & offsetRate) override
 	{
-		gameWorldObject.MoveBy({ 0, offsetRate });
+		gameWorldObject.m_position += { 0, offsetRate };
 	}
 	//virtual void execute() { MoveCameraUp(); }
 };
@@ -26,7 +26,7 @@ class DownCommand : public Command
 public:
 	virtual void execute(GameWorldObject & gameWorldObject, const float & offsetRate) override
 	{
-		gameWorldObject.MoveBy({ 0, -offsetRate });
+		gameWorldObject.m_position += { 0, -offsetRate };
 	}
 };
 
@@ -35,7 +35,7 @@ class LeftCommand : public Command
 public:
 	virtual void execute(GameWorldObject & gameWorldObject, const float & offsetRate) override
 	{
-		gameWorldObject.MoveBy({-offsetRate, 0});
+		gameWorldObject.m_position += {-offsetRate, 0};
 	}
 };
 
@@ -44,7 +44,7 @@ class RightCommand : public Command
 public:
 	virtual void execute(GameWorldObject & gameWorldObject, const float & offsetRate) override
 	{
-		gameWorldObject.MoveBy({ offsetRate, 0 });
+		gameWorldObject.m_position += { offsetRate, 0 };
 	}
 };
 

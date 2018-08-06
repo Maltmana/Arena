@@ -16,18 +16,9 @@ GameWorldObject::GameWorldObject(std::unique_ptr<GraphicsComponent> graphicsComp
 {
 }
 
-
-
-void GameWorldObject::Update(Camera & camera)
+void GameWorldObject::GraphicsUpdate(Camera const & camera) const
 {
-	m_graphicsComponent->Update(*this, camera); // TODO : remove raw pointer.
-}
-
-void GameWorldObject::MoveBy(const Vec2 offset)
-{
-	{
-		m_position += offset;
-	}
+	//m_graphicsComponent->Update(*this, camera); // TODO : remove raw pointer.
 }
 
 

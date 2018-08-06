@@ -33,10 +33,11 @@ public:
 		return std::make_unique<GameWorldObject>(std::make_unique<GraphicsComponent>(color), std::make_unique<InputComponent>(), std::make_unique<LogicComponent>(hitbox, typeOf));
 	}
 
-	std::unique_ptr<GameWorldObject> MoveToContainer(std::unique_ptr<GameWorldObject> creature)
+	// calls std::move on parameter and asserts that parameter is now null
+	void MoveToContainer(std::unique_ptr<GameWorldObject> creature)
 	{
 		creatures.push_back(std::move(creature));
-		assert(creature);
+		assert(!creature);
 	}
 
 	std::vector<std::unique_ptr<GameWorldObject>> creatures;
