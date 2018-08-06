@@ -30,7 +30,7 @@ public:
 
 
 	/*Takes Entities vertices model, applies transform based on entities position and then sends it down rendering pipeline*/
-	void DrawHitbox(GO & GO) const;
+	void DrawHitbox(GO const & GO) const;
 
 	void BeginFrame();
 	void EndFrame();

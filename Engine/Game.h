@@ -58,6 +58,11 @@ private:
 	// SECOND ORDER
 
 
+	// TO BE ORGANIZED BETTER AND MORE MODULARLY
+
+	// ADD GENERIC CONTAINER FOR ALL GAME OBJECTS
+
+	bool m_drawHitboxMode = true;
 
 	
 

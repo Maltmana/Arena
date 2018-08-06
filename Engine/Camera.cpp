@@ -9,7 +9,7 @@ Camera::Camera(Graphics & graphics)
 {
 }
 // all connections between game and graphics go through camera object. Begins with making drawable out of GO and applying entities position and scale onto its drawable.
-void Camera::DrawHitbox(GO & gO) const
+void Camera::DrawHitbox(GO const & gO) const
 {
 	Drawable drawable(gO.m_logicComponent->getHitbox(), gO.m_graphicsComponent->GetHitboxColor());
 	drawable.Scale(gO.m_scale);

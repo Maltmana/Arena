@@ -67,13 +67,13 @@ void Game::UpdateModel()
 	
 void Game::ComposeFrame()
 {
-
-
-	// TODO : Handle graphics components.
-
-	for (auto & c : m_creatureHandler.creatures)
+	// Only drawing hitboxes for now
+	if (m_drawHitboxMode)
 	{
-		c->GraphicsUpdate(m_camera);
+		for (auto & c : m_creatureHandler.creatures)
+		{
+			m_camera.DrawHitbox(*c);
+		}
 	}
 
 	/*ss.Update(m_camera);*/
