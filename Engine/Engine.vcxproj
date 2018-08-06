@@ -150,7 +150,7 @@
     <ClInclude Include="CreatureHandler.h" />
     <ClInclude Include="Drawable.h" />
     <ClInclude Include="DXErr.h" />
-    <ClInclude Include="GameWorldObject.h" />
+    <ClInclude Include="GO.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="GraphicsComponent.h" />

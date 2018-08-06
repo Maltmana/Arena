@@ -2,7 +2,7 @@
 
 //Creature::Creature(std::vector<Vec2>& hitbox, std::string creatureType, int maxHp, float attackDmg, Vec2 & pos, const Color & color)
 //	:
-//	GameWorldObject{ hitbox,pos,color}
+//	GO{ hitbox,pos,color}
 //
 //{}
 //

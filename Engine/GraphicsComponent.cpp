@@ -1,13 +1,13 @@
 #include "GraphicsComponent.h"
 #include "Camera.h"
-#include "GameWorldObject.h"
+#include "GO.h"
 
-void GraphicsComponent::Update(GameWorldObject & gameWorldObject, Camera & camera)
+void GraphicsComponent::Update(GO & gO, Camera & camera)
 {
-	DrawHitbox(gameWorldObject, camera);
+	DrawHitbox(gO, camera);
 }
 
-void GraphicsComponent::DrawHitbox(GameWorldObject & gameWorldObject, Camera & camera) const
+void GraphicsComponent::DrawHitbox(GO & gO, Camera & camera) const
 {
-	camera.DrawHitbox(gameWorldObject);
+	camera.DrawHitbox(gO);
 }

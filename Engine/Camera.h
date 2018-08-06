@@ -5,9 +5,9 @@
 
 #include "Graphics.h"
 
-#include "GameWorldObject.h"
+#include "GO.h"
 
-class Camera : public GameWorldObject // TODO : elegantly prevent multiple Cameras from existing.
+class Camera : public GO // TODO : elegantly prevent multiple Cameras from existing.
 {
 public:
 
@@ -15,7 +15,7 @@ public:
 	Camera(Graphics & graphics);
 	Camera(const Camera & camera) // TODO : put this in cpp
 		:
-		GameWorldObject(),
+		GO(),
 		m_ct{camera.m_ct},
 		m_graphics{camera.m_graphics}
 	{
@@ -30,7 +30,7 @@ public:
 
 
 	/*Takes Entities vertices model, applies transform based on entities position and then sends it down rendering pipeline*/
-	void DrawHitbox(GameWorldObject & gameWorldObject) const;
+	void DrawHitbox(GO & GO) const;
 
 	void BeginFrame();
 	void EndFrame();

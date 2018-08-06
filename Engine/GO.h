@@ -7,16 +7,16 @@
 
 class Drawable;
 
-class GameWorldObject 
+class GO 
 {
 
 public:		
 
 	// Initializes unique_ptr components to null
-	GameWorldObject();
+	GO();
 
 	// Calls std::move on each parameter
-	GameWorldObject(std::unique_ptr<GraphicsComponent> graphicsComponent,
+	GO(std::unique_ptr<GraphicsComponent> graphicsComponent,
 		std::unique_ptr<InputComponent> inputComponent,
 		std::unique_ptr<LogicComponent> logicComponent);
 
@@ -28,7 +28,7 @@ public:
 	 Color GetColor() const { return m_graphicsComponent->GetColor(); };
 
 	 Vec2 m_position = { 0,0 };
-	 float m_scale = 1.0f; // scale is for camera which is also a GameWorldObject
+	 float m_scale = 1.0f; // scale is for camera which is also a GO
 
 private:
 
