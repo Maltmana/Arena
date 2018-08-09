@@ -1,7 +1,7 @@
 #pragma once
 #include "Colors.h"
 
-class GO;
+class GWO;
 class Camera;
 
 /*Sole interactor with camera class which is the sole interactor with gfx via the rendering pipeline. Sends data to be processed by Camera. color only for now */

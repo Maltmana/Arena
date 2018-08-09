@@ -43,10 +43,10 @@
     <Filter Include="Header Files\Arena\SuperComponents\Camera\GraphicsPipeline">
       <UniqueIdentifier>{ebd35961-6a90-438b-bdfe-18b3d186d928}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Arena\GO %28Game Objects%29">
+    <Filter Include="Header Files\Arena\GWO %28Game World Objects%29">
       <UniqueIdentifier>{eb43cae5-94c2-4d35-b284-02f2d4f4bacf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Arena\GO %28Game Objects%29\Creatures">
+    <Filter Include="Header Files\Arena\GWO %28Game World Objects%29\Creatures">
       <UniqueIdentifier>{ab06d428-f752-4d45-bd29-d6eb49bd1866}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -106,7 +106,7 @@
       <Filter>Header Files\Arena\GOComponents</Filter>
     </ClInclude>
     <ClInclude Include="Creature.h">
-      <Filter>Header Files\Arena\GO %28Game Objects%29\Creatures</Filter>
+      <Filter>Header Files\Arena\GWO %28Game World Objects%29\Creatures</Filter>
     </ClInclude>
     <ClInclude Include="Clock.h">
       <Filter>Header Files\Helper</Filter>
@@ -135,8 +135,8 @@
     <ClInclude Include="Camera.h">
       <Filter>Header Files\Arena\SuperComponents\Camera</Filter>
     </ClInclude>
-    <ClInclude Include="GO.h">
-      <Filter>Header Files\Arena\GO %28Game Objects%29</Filter>
+    <ClInclude Include="GWO.h">
+      <Filter>Header Files\Arena\GWO %28Game World Objects%29</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -188,10 +188,10 @@
     <ClCompile Include="UserInputManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GO.cpp">
+    <ClCompile Include="LogicComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LogicComponent.cpp">
+    <ClCompile Include="GWO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -22,7 +22,7 @@
 
 
 #include "Star.h"
-#include "GO.h"
+#include "GWO.h"
 #include "Creature.h"
 #include "Camera.h"
 #include "Rect.h"

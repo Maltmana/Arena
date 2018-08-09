@@ -15,13 +15,13 @@ void Game::UpdateModel()
 
 	double frameTime = m_clock.GetCounterS();
 	m_clock.StartCounter();
-	GO & activeGO = m_camera;
+	GWO & activeGWO = m_camera;
 	double speed = 100.f*frameTime;
 
 	Command * command = m_userInputManager.HandleInput();
 	if (command)
 	{
-		command->execute(activeGO, (float)speed);
+		command->execute(activeGWO, (float)speed);
 	}
 
 /*
@@ -79,7 +79,7 @@ void Game::ComposeFrame()
 	/*ss.Update(m_camera);*/
 
 	//const std::vector<Vec2> GUIrect = { {-200, -200}, { 0,0 } };
-	//GO GUI(GUIrect, camera.GetPos(), Colors::Magenta);
+	//GWO GUI(GUIrect, camera.GetPos(), Colors::Magenta);
 
 	//GUI.Update(camera);
 }
