@@ -34,12 +34,5 @@ void Drawable::Render(Graphics & gfx)
 		v += m_translation;
 	}
 
-	if (m_model.size() != 2)
-	{
-		gfx.DrawClosedPolyline(m_model, m_c);
-	}
-	else
-	{
-		gfx.DrawFilledRect(m_model, m_c);
-	}
+ 	gfx.DrawClosedPolyline(m_model, m_c);
 }
