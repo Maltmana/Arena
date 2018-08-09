@@ -25,6 +25,11 @@ void Drawable::ScaleIndependent(float scaleX, float scaleY)
 	m_scaleY *= scaleY;
 }
 
+void Drawable::ConvertTranslationFromWindowsYCoordToCartesianYCoord()
+{
+	m_translation.y *= -1;
+}
+
 void Drawable::Render(Graphics & gfx)
 {
 	for (auto & v : m_model)

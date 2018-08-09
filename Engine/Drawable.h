@@ -14,6 +14,8 @@ public:
 
 	void ScaleIndependent(float scaleX, float scaleY);
 
+	void ConvertTranslationFromWindowsYCoordToCartesianYCoord();
+
 	void Render(Graphics & gfx);
 
 private:
