@@ -45,6 +45,7 @@ public:
 	Command * m_S = 0;
 	Command * m_A = 0;
 	Command * m_D = 0;
+	Command * m_rClick = 0;
 
 	
 
@@ -53,10 +54,11 @@ public:
 	//	I assume you're going through the-hell-that-is-pointers in order to remap keys at some later point?
 	//	Is there a possibility of multiple instances of UserInputManager? If there are multiple UserInputManager, then your static solution may not work. 
 	//	All UserInputManagers will start with the same keys and mess with each other's data.– user4581301 2 days ago
-	static UpCommand upCommand;
-	static DownCommand downCommand;
-	static LeftCommand leftCommand;
-	static RightCommand rightCommand;
+	static UpCommand m_upCommand;
+	static DownCommand m_downCommand;
+	static LeftCommand m_leftCommand;
+	static RightCommand m_rightCommand;
+	static CreateAtCursorCommand m_createAtCursorCommand;
 
 
 

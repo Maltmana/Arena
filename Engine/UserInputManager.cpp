@@ -9,10 +9,13 @@ UserInputManager::UserInputManager(MainWindow & window)
 {
 	assert(numberOfUserInputManagers < 1);
 
-		m_W = &upCommand;	
-		m_S = &downCommand;
-		m_A = &leftCommand;
-		m_D = &rightCommand;
+	// TODO : have this command setter be linked to some kind of INI file or something
+
+		m_W = &m_upCommand;	
+		m_S = &m_downCommand;
+		m_A = &m_leftCommand;
+		m_D = &m_rightCommand;
+		m_rClick = &m_createAtCursorCommand;
 		numberOfUserInputManagers++;
 
 }
@@ -25,6 +28,7 @@ std::vector<Command *> UserInputManager::HandleInput() // TODO : make it so that
 	if (m_window.kbd.KeyIsPressed('S')) commands.push_back(m_S);
 	if (m_window.kbd.KeyIsPressed('A')) commands.push_back(m_A); // TODO : understand wtf this crazy thing is.
 	if (m_window.kbd.KeyIsPressed('D')) commands.push_back(m_D);
+	if (m_window.mouse.LeftIsPressed()) commands.push_back(m_rClick);
 
 	// nothing was pressed. do nothing.
 	return commands;
@@ -44,7 +48,8 @@ Mouse & UserInputManager::GetMouse()
 
 int UserInputManager::numberOfUserInputManagers = 0;
 
-LeftCommand UserInputManager::leftCommand;
-UpCommand UserInputManager::upCommand;
-DownCommand UserInputManager::downCommand;
-RightCommand UserInputManager::rightCommand;
+LeftCommand UserInputManager::m_leftCommand;
+UpCommand UserInputManager::m_upCommand;
+DownCommand UserInputManager::m_downCommand;
+RightCommand UserInputManager::m_rightCommand;
+CreateAtCursorCommand UserInputManager::m_createAtCursorCommand;

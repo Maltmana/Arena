@@ -7,25 +7,27 @@ class CreatureHandler
 {
 public:
 
-	// these create specialized objects with special components that define the creature made
-
-	std::unique_ptr<GWO> CreateOgre() const
+	// creates ogre uniqueptr and places on back of creatures vector
+	// TODO : return the emplaced back creature so that you don't have to directly access the back of the vector to get to it!
+	void CreateOgre()
 	{
 		std::vector<Vec2> const ogreModel = { { 20, -20 },{ 20,20 },{ -20,20 },{ -20,-20 } };
 
-		return CreateCreature(Colors::Blue, ogreModel, "ogre");
+		creatures.emplace_back(CreateCreature(Colors::Blue, ogreModel, "ogre"));
 	}
-	std::unique_ptr<GWO> CreateSerpent() const
+	// creates serp uniqueptr and places on back of creatures vector
+	void CreateSerpent()
 	{
 		std::vector<Vec2> const serpentModel = { { 30, -10 },{ 30,10 },{ -30,10 },{ -30,-10 } };
 
-		return CreateCreature(Colors::Green, serpentModel, "serpent");
+		creatures.emplace_back(CreateCreature(Colors::Green, serpentModel, "serpent"));
 	}
-	std::unique_ptr<GWO> CreateHuman() const
+	// creates hum uniqueptr and places on back of creatures vector
+	void CreateHuman()
 	{
 		std::vector<Vec2> const humanModel = { { 10, -10 },{ 10,10 },{ -10,10 },{ -10,-10 } };
 
-		return CreateCreature(Colors::White, humanModel, "human");
+		creatures.emplace_back(CreateCreature(Colors::White, humanModel, "human"));
 	}
 
 	std::unique_ptr<GWO> CreateCreature(Color const color, std::vector<Vec2> const hitbox, std::string const typeOf) const

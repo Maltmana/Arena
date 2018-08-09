@@ -5,7 +5,7 @@ Game::Game(Camera & camera, UserInputManager & userInputManager)
 	m_camera{ camera },
 	m_userInputManager{userInputManager}
 {
-	m_creatureHandler.MoveToContainer(m_creatureHandler.CreateHuman());
+	m_creatureHandler.CreateHuman();
 }
 
 void Game::UpdateModel()
@@ -23,7 +23,7 @@ void Game::UpdateModel()
 	{
 		for (auto command : commands)
 		{
-			command->execute(activeGWO, (float)speed);
+			command->execute(m_creatureHandler, m_userInputManager.GetMouse(), activeGWO, (float)speed);
 		}
 	}
 
