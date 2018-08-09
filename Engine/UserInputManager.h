@@ -32,7 +32,7 @@ public:
 		return *this;
 	}*/
 
-	Command * HandleInput();
+	std::vector<Command *> HandleInput();
 
 	Keyboard & GetKeyboard();
 	Mouse & GetMouse();

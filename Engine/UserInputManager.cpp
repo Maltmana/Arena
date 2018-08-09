@@ -17,15 +17,17 @@ UserInputManager::UserInputManager(MainWindow & window)
 
 }
 
-Command * UserInputManager::HandleInput() // TODO : make it so that it responds to more than one button at once
+std::vector<Command *> UserInputManager::HandleInput() // TODO : make it so that it responds to more than one button at once
 {
-	if (m_window.kbd.KeyIsPressed('W')) return  m_W; // TODO : understand wtf this crazy thing is.
-	if (m_window.kbd.KeyIsPressed('S')) return  m_S;
-	if (m_window.kbd.KeyIsPressed('A')) return  m_A; // TODO : understand wtf this crazy thing is.
-	if (m_window.kbd.KeyIsPressed('D')) return  m_D;
+	std::vector<Command *> commands;
+
+	if (m_window.kbd.KeyIsPressed('W')) commands.push_back(m_W); // TODO : understand wtf this crazy thing is.
+	if (m_window.kbd.KeyIsPressed('S')) commands.push_back(m_S);
+	if (m_window.kbd.KeyIsPressed('A')) commands.push_back(m_A); // TODO : understand wtf this crazy thing is.
+	if (m_window.kbd.KeyIsPressed('D')) commands.push_back(m_D);
 
 	// nothing was pressed. do nothing.
-	return NULL;
+	return commands;
 }
 
 

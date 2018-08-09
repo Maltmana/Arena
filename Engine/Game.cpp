@@ -13,15 +13,18 @@ void Game::UpdateModel()
 
 	// TODO : handle logic components.
 
-	double frameTime = m_clock.GetCounterS();
+	double frameTime = m_clock.GetCounterS(); // TODO ; simplify timer function to just be one call and the return is old time.
 	m_clock.StartCounter();
 	GWO & activeGWO = m_camera;
 	double speed = 100.f*frameTime;
 
-	Command * command = m_userInputManager.HandleInput();
-	if (command)
+	std::vector<Command *> commands = m_userInputManager.HandleInput();
+	if (!commands.empty())
 	{
-		command->execute(activeGWO, (float)speed);
+		for (auto command : commands)
+		{
+			command->execute(activeGWO, (float)speed);
+		}
 	}
 
 /*
