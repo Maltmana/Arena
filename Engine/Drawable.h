@@ -10,11 +10,15 @@ public:
 
 	void Translate(const Vec2& translation);
 
+	Vec2 GetTranslateCopy() const { return m_translation; };
+
+	void SetTranslate(Vec2 const & pos);
+
+
 	void Scale(float scale);
 
 	void ScaleIndependent(float scaleX, float scaleY);
 
-	void ConvertTranslationFromWindowsYCoordToCartesianYCoord();
 
 	void Render(Graphics & gfx);
 

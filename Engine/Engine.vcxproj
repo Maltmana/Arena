@@ -145,7 +145,6 @@
     <ClInclude Include="Colors.h" />
     <ClInclude Include="COMInitializer.h" />
     <ClInclude Include="Command.h" />
-    <ClInclude Include="CoordinateTransformer.h" />
     <ClInclude Include="Creature.h" />
     <ClInclude Include="CreatureHandler.h" />
     <ClInclude Include="Drawable.h" />
@@ -173,7 +172,6 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Clock.cpp" />
     <ClCompile Include="COMInitializer.cpp" />
-    <ClCompile Include="CoordinateTransformer.cpp" />
     <ClCompile Include="Creature.cpp" />
     <ClCompile Include="Drawable.cpp" />
     <ClCompile Include="DXErr.cpp" />

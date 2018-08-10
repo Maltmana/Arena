@@ -1,8 +1,6 @@
 #pragma once
 #include "Vec2.h"
 
-#include "CoordinateTransformer.h"
-
 #include "Graphics.h"
 
 #include "GWO.h"
@@ -16,7 +14,6 @@ public:
 	Camera(const Camera & camera) // TODO : put this in cpp
 		:
 		GWO(),
-		m_ct{camera.m_ct},
 		m_graphics{camera.m_graphics}
 	{
 		numberOfCameras++;
@@ -40,7 +37,6 @@ public:
 private:
 	static int numberOfCameras;
 
-	CoordinateTransformer m_ct;
 	Graphics & m_graphics;
 
 };

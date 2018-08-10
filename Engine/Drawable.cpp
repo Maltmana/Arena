@@ -11,6 +11,12 @@ void Drawable::Translate(const Vec2 & translation)
 	m_translation += translation;
 }
 
+void Drawable::SetTranslate(Vec2 const & pos)
+{
+	m_translation = pos;
+}
+
+
 void Drawable::Scale(float scale)
 {
 	m_scaleX *= scale;
@@ -25,10 +31,7 @@ void Drawable::ScaleIndependent(float scaleX, float scaleY)
 	m_scaleY *= scaleY;
 }
 
-void Drawable::ConvertTranslationFromWindowsYCoordToCartesianYCoord()
-{
-	m_translation.y *= -1;
-}
+
 
 void Drawable::Render(Graphics & gfx)
 {

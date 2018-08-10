@@ -90,9 +90,6 @@
     <ClInclude Include="Drawable.h">
       <Filter>Header Files\Arena\SuperComponents\Camera\GraphicsPipeline</Filter>
     </ClInclude>
-    <ClInclude Include="CoordinateTransformer.h">
-      <Filter>Header Files\Arena\SuperComponents\Camera\GraphicsPipeline</Filter>
-    </ClInclude>
     <ClInclude Include="Vec2.h">
       <Filter>Header Files\Helper</Filter>
     </ClInclude>
@@ -150,9 +147,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CoordinateTransformer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Sound.cpp">
