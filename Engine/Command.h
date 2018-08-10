@@ -59,7 +59,7 @@ public:
 	{
 	
 		creatureHandler.CreateHuman();
-		creatureHandler.creatures.back().get()->m_position = (Vec2)mouse.GetPos(); // TODO ; is casting appropriate here?
+		creatureHandler.creatures.back().get()->m_position = { (float)mouse.GetPosX(), (float)mouse.GetPosY() * -1.f }; // TODO ; is casting appropriate here?
 			
 	}
 };

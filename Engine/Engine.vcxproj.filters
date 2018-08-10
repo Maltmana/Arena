@@ -138,6 +138,9 @@
     <ClInclude Include="GWO.h">
       <Filter>Header Files\Arena\GWO %28Game World Objects%29</Filter>
     </ClInclude>
+    <ClInclude Include="GameMath.h">
+      <Filter>Header Files\Helper</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
