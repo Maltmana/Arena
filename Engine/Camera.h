@@ -32,6 +32,10 @@ public:
 	void BeginFrame();
 	void EndFrame();
 
+	int GetScreenWidth() const { return m_graphics.ScreenWidth; };
+	int GetScreenHeight() const { return m_graphics.ScreenHeight; };
+
+
 
 
 private:

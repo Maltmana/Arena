@@ -23,7 +23,7 @@ void Game::UpdateModel()
 	{
 		for (auto command : commands)
 		{
-			command->execute(m_creatureHandler, m_userInputManager.GetMouse(), activeGWO, (float)speed);
+			command->execute(m_creatureHandler, m_userInputManager.GetMouse(), activeGWO, (float)speed, m_camera);
 		}
 	}
 

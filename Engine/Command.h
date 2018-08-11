@@ -4,8 +4,9 @@
 #include "GWO.h"
 #include "CreatureHandler.h"
 #include "Mouse.h"
+#include "GameMath.h"
 
-#define EXECUTEPARAM CreatureHandler & creatureHandler, Mouse & mouse, GWO & gWO, const float & offsetRate
+#define EXECUTEPARAM CreatureHandler & creatureHandler, Mouse & mouse, GWO & gWO, const float & offsetRate, Camera const & camera
 
 /* Represents game actions. Uses Command pattern */
 class Command
@@ -57,9 +58,8 @@ class CreateAtCursorCommand : public Command
 public:
 	virtual void execute(EXECUTEPARAM) override
 	{
-	
-		creatureHandler.CreateHuman();
-		creatureHandler.creatures.back().get()->m_position = { (float)mouse.GetPosX(), (float)mouse.GetPosY() * -1.f }; // TODO ; is casting appropriate here?
+		creatureHandler.CreateHuman(); // TODO : have both these lines in one? if CreateHuman returns reference to the creature just emplaced.
+		creatureHandler.creatures.back().get()->m_position = GameMath::WindowCoordinatesToGameWorldCoordinates((Vec2)mouse.GetPos(),camera); // TODO ; is casting appropriate here?
 			
 	}
 };
