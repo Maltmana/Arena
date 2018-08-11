@@ -32,6 +32,10 @@ std::vector<Command *> UserInputManager::HandleInput() // TODO : make it so that
 	{
 		commands.push_back(m_LClick);
 	}
+	if (m_window.mouse.RightIsClickedOnce())
+	{
+		commands.push_back(m_LClick);
+	}
 
 	// nothing was pressed. do nothing.
 	return commands;

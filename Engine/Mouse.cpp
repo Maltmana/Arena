@@ -46,6 +46,24 @@ bool Mouse::RightIsPressed() const
 	return rightIsPressed;
 }
 
+bool Mouse::RightIsClickedOnce()
+{
+	if (rightIsPressed && rightWasPressedLastTick)
+	{
+		return false;
+	}
+	else if (rightIsPressed)
+	{
+		rightWasPressedLastTick = true;
+	}
+	else
+	{
+		rightWasPressedLastTick = false;
+	}
+
+	return rightIsPressed;
+}
+
 bool Mouse::LeftIsReleased()
 {
 	if (leftIsReleased)

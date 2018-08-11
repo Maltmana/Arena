@@ -116,7 +116,9 @@ public:
 	int GetPosY() const;
 	bool LeftIsPressed() const;
 	bool RightIsPressed() const;
-	// if event que isn't empty calls Read on mouse ( which isn't const)
+
+	// TODO : implement
+	bool RightIsClickedOnce();
 	// modifies member bool leftIsReleased to false, otherwise it spams event after 1 release
 	bool LeftIsReleased();
 	// modifies member bool rightIsReleased to false, otherwise it spams event after 1 release
@@ -150,6 +152,7 @@ private:
 	bool rightIsPressed = false;
 	bool leftIsReleased = false;
 	bool rightIsReleased = false;
+	bool rightWasPressedLastTick = false;
 	bool isInWindow = false;
 	std::queue<Event> buffer;
 };
