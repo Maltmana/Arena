@@ -46,6 +46,28 @@ bool Mouse::RightIsPressed() const
 	return rightIsPressed;
 }
 
+bool Mouse::LeftIsReleased()
+{
+	if (leftIsReleased)
+	{
+		bool oldLeftIsReleased = leftIsReleased;
+		leftIsReleased = false;
+		return oldLeftIsReleased;
+	}
+	return leftIsReleased;
+}
+
+bool Mouse::RightIsReleased()
+{
+	if (rightIsReleased)
+	{
+		bool oldRightIsReleased = rightIsReleased;
+		rightIsReleased = false;
+		return oldRightIsReleased;
+	}
+	return rightIsReleased;
+}
+
 bool Mouse::IsInWindow() const
 {
 	return isInWindow;
@@ -97,14 +119,6 @@ void Mouse::OnLeftPressed( int x,int y )
 	TrimBuffer();
 }
 
-void Mouse::OnLeftReleased( int x,int y )
-{
-	leftIsPressed = false;
-
-	buffer.push( Mouse::Event( Mouse::Event::Type::LRelease,*this ) );
-	TrimBuffer();
-}
-
 void Mouse::OnRightPressed( int x,int y )
 {
 	rightIsPressed = true;
@@ -115,9 +129,19 @@ void Mouse::OnRightPressed( int x,int y )
 
 void Mouse::OnRightReleased( int x,int y )
 {
+	rightIsReleased = true;
 	rightIsPressed = false;
 
 	buffer.push( Mouse::Event( Mouse::Event::Type::RRelease,*this ) );
+	TrimBuffer();
+}
+
+void Mouse::OnLeftReleased(int x, int y)
+{
+	leftIsReleased = true;
+	leftIsPressed = false;
+
+	buffer.push(Mouse::Event(Mouse::Event::Type::LRelease, *this));
 	TrimBuffer();
 }
 

@@ -15,7 +15,7 @@ UserInputManager::UserInputManager(MainWindow & window)
 		m_S = &m_downCommand;
 		m_A = &m_leftCommand;
 		m_D = &m_rightCommand;
-		m_rClick = &m_createAtCursorCommand;
+		m_LClick = &m_createAtCursorCommand;
 		numberOfUserInputManagers++;
 
 }
@@ -28,7 +28,10 @@ std::vector<Command *> UserInputManager::HandleInput() // TODO : make it so that
 	if (m_window.kbd.KeyIsPressed('S')) commands.push_back(m_S);
 	if (m_window.kbd.KeyIsPressed('A')) commands.push_back(m_A); // TODO : understand wtf this crazy thing is.
 	if (m_window.kbd.KeyIsPressed('D')) commands.push_back(m_D);
-	if (m_window.mouse.LeftIsPressed()) commands.push_back(m_rClick);
+	if (m_window.mouse.LeftIsReleased())
+	{
+		commands.push_back(m_LClick);
+	}
 
 	// nothing was pressed. do nothing.
 	return commands;

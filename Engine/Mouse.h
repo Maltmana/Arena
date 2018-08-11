@@ -44,6 +44,8 @@ public:
 		Type type;
 		bool leftIsPressed;
 		bool rightIsPressed;
+		bool leftIsReleased;
+		bool rightIsReleased;
 		int x;
 		int y;
 	public:
@@ -52,6 +54,8 @@ public:
 			type( Type::Invalid ),
 			leftIsPressed( false ),
 			rightIsPressed( false ),
+			leftIsReleased(false),
+			rightIsReleased(false),
 			x( 0 ),
 			y( 0 )
 		{}
@@ -60,6 +64,8 @@ public:
 			type( type ),
 			leftIsPressed( parent.leftIsPressed ),
 			rightIsPressed( parent.rightIsPressed ),
+			leftIsReleased(parent.leftIsReleased),
+			rightIsReleased(parent.rightIsReleased),
 			x( parent.x ),
 			y( parent.y )
 		{}
@@ -91,6 +97,15 @@ public:
 		{
 			return rightIsPressed;
 		}
+		bool LeftIsReleased() const
+		{
+			return leftIsReleased;
+		}
+
+		bool RightIsReleased() const
+		{
+			return rightIsReleased;
+		}
 	};
 public:
 	Mouse() = default;
@@ -101,7 +116,13 @@ public:
 	int GetPosY() const;
 	bool LeftIsPressed() const;
 	bool RightIsPressed() const;
+	// if event que isn't empty calls Read on mouse ( which isn't const)
+	// modifies member bool leftIsReleased to false, otherwise it spams event after 1 release
+	bool LeftIsReleased();
+	// modifies member bool rightIsReleased to false, otherwise it spams event after 1 release
+	bool RightIsReleased();
 	bool IsInWindow() const;
+	// reads front of event buffer. pops off one.
 	Mouse::Event Read();
 	bool IsEmpty() const
 	{
@@ -113,8 +134,10 @@ private:
 	void OnMouseLeave();
 	void OnMouseEnter();
 	void OnLeftPressed( int x,int y );
-	void OnLeftReleased( int x,int y );
 	void OnRightPressed( int x,int y );
+	// causes release of leftIsPressed by switching member bool leftIsPressed to false
+	void OnLeftReleased(int x, int y);
+	// causes release of rightIsPressed by switching member bool rightIsPressed to false
 	void OnRightReleased( int x,int y );
 	void OnWheelUp( int x,int y );
 	void OnWheelDown( int x,int y );
@@ -125,6 +148,8 @@ private:
 	int y;
 	bool leftIsPressed = false;
 	bool rightIsPressed = false;
+	bool leftIsReleased = false;
+	bool rightIsReleased = false;
 	bool isInWindow = false;
 	std::queue<Event> buffer;
 };
