@@ -11,8 +11,6 @@ Game::Game(Camera & camera, UserInputManager & userInputManager)
 
 void Game::UpdateModel()
 {
-	FileIO fileIO;
-	fileIO.QuickSave();
 	// TODO : handle logic components.
 
 	double frameTime = m_clock.GetCounterS(); // TODO ; simplify timer function to just be one call and the return is old time.
@@ -25,7 +23,7 @@ void Game::UpdateModel()
 	{
 		for (auto command : commands)
 		{
-			command->execute(m_creatureHandler, m_userInputManager.GetMouse(), activeGWO, (float)speed, m_camera);
+			command->execute(m_creatureHandler, m_userInputManager.GetMouse(), activeGWO, (float)speed, m_camera, m_fileIO);
 		}
 	}
 

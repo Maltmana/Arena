@@ -30,6 +30,8 @@
 #include "UserInputManager.h"
 #include "CreatureHandler.h"
 
+class FileIO;
+
 class Game
 {
 public:
@@ -47,6 +49,7 @@ private:
 	// SUPER COMPONENTS
 	Camera & m_camera;
 	UserInputManager & m_userInputManager;
+	FileIO m_fileIO;
 
 	// GAME OBJECT HANDLERS
 	CreatureHandler m_creatureHandler;

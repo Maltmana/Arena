@@ -5,8 +5,10 @@
 #include "CreatureHandler.h"
 #include "Mouse.h"
 #include "GameMath.h"
+#include "FileIO.h"
 
-#define EXECUTEPARAM CreatureHandler & creatureHandler, Mouse & mouse, GWO & gWO, const float & offsetRate, Camera const & camera
+// TODO : passing all params in like this is so stupid!!!!
+#define EXECUTEPARAM CreatureHandler & creatureHandler, Mouse & mouse, GWO & gWO, const float & offsetRate, Camera const & camera, FileIO & fileIO
 
 /* Represents game actions. Uses Command pattern */
 class Command
@@ -61,6 +63,15 @@ public:
 		creatureHandler.CreateHuman(); // TODO : have both these lines in one? if CreateHuman returns reference to the creature just emplaced.
 		creatureHandler.creatures.back().get()->m_position = GameMath::WindowCoordinatesToGameWorldCoordinates((Vec2)mouse.GetPos(),camera); // TODO ; is casting appropriate here?
 			
+	}
+};
+
+class QuickSaveCommand : public Command
+{
+public:
+	virtual void execute(EXECUTEPARAM) override
+	{
+		fileIO.QuickSave();
 	}
 };
 

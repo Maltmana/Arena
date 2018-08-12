@@ -16,6 +16,7 @@ UserInputManager::UserInputManager(MainWindow & window)
 		m_A = &m_leftCommand;
 		m_D = &m_rightCommand;
 		m_LClick = &m_createAtCursorCommand;
+		m_F5 = &m_quickSaveCommand;
 		numberOfUserInputManagers++;
 
 }
@@ -35,6 +36,10 @@ std::vector<Command *> UserInputManager::HandleInput() // TODO : make it so that
 	if (m_window.mouse.RightIsClickedOnce())
 	{
 		commands.push_back(m_LClick);
+	}
+	if (m_window.kbd.KeyIsPressed(VK_F5))
+	{
+		commands.push_back(m_F5);
 	}
 
 	// nothing was pressed. do nothing.
@@ -60,3 +65,4 @@ UpCommand UserInputManager::m_upCommand;
 DownCommand UserInputManager::m_downCommand;
 RightCommand UserInputManager::m_rightCommand;
 CreateAtCursorCommand UserInputManager::m_createAtCursorCommand;
+QuickSaveCommand UserInputManager::m_quickSaveCommand;

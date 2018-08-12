@@ -22,6 +22,7 @@ public:
 	Command * m_A = 0;
 	Command * m_D = 0;
 	Command * m_LClick = 0;
+	Command * m_F5 = 0;
 
 	
 
@@ -35,6 +36,7 @@ public:
 	static LeftCommand m_leftCommand;
 	static RightCommand m_rightCommand;
 	static CreateAtCursorCommand m_createAtCursorCommand;
+	static QuickSaveCommand m_quickSaveCommand;
 
 
 
