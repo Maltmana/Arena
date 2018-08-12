@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "FileIO.h"
 
 Game::Game(Camera & camera, UserInputManager & userInputManager)
 	:
@@ -10,7 +11,8 @@ Game::Game(Camera & camera, UserInputManager & userInputManager)
 
 void Game::UpdateModel()
 {
-
+	FileIO fileIO;
+	fileIO.QuickSave();
 	// TODO : handle logic components.
 
 	double frameTime = m_clock.GetCounterS(); // TODO ; simplify timer function to just be one call and the return is old time.

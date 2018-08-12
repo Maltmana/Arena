@@ -49,6 +49,9 @@
     <Filter Include="Header Files\Arena\GWO %28Game World Objects%29\Creatures">
       <UniqueIdentifier>{ab06d428-f752-4d45-bd29-d6eb49bd1866}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Arena\SuperComponents\FileIO">
+      <UniqueIdentifier>{2642c9bb-09d8-4e5c-81e7-3364ecb1a8a5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChiliException.h">
@@ -137,6 +140,9 @@
     </ClInclude>
     <ClInclude Include="GameMath.h">
       <Filter>Header Files\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="FileIO.h">
+      <Filter>Header Files\Arena\SuperComponents\FileIO</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
