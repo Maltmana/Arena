@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "Logger.h"
 
 Game::Game(Camera & camera, UserInputManager & userInputManager)
 	:
@@ -10,6 +11,7 @@ Game::Game(Camera & camera, UserInputManager & userInputManager)
 
 void Game::UpdateModel()
 {
+	Logger::GetInstance();
 
 	// TODO : handle logic components.
 
