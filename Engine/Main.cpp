@@ -21,6 +21,8 @@
 #include "MainWindow.h"
 #include "Game.h"
 #include "ChiliException.h"
+#include "Camera.h"
+#include "UserInputManager.h"
 
 
 int WINAPI wWinMain( HINSTANCE hInst,HINSTANCE,LPWSTR pArgs,INT )

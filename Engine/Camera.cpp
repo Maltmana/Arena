@@ -1,6 +1,9 @@
 #include "Camera.h"
 #include "CoordinateTransformer.h"
 #include "GO.h"
+#include "LogicComponent.h"
+#include "GraphicsComponent.h"
+#include "InputComponent.h"
 
 Camera::Camera(Graphics & graphics)
 	:

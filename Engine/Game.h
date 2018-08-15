@@ -19,16 +19,13 @@
  *	along with The Chili DirectX Framework.  If not, see <http://www.gnu.org/licenses/>.  *
  ******************************************************************************************/
 #pragma once
-
-
-#include "Star.h"
-#include "GO.h"
-#include "Creature.h"
-#include "Camera.h"
-#include "Rect.h"
+#include "CreatureHandler.h" // TODO : figure out how to remove these from the header with forward declaration
 #include "Clock.h"
-#include "UserInputManager.h"
-#include "CreatureHandler.h"
+
+class Camera;
+class UserInputManager;
+
+
 
 class Game
 {

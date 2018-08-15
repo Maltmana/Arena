@@ -1,10 +1,16 @@
 #include "GO.h"
-#include "Drawable.h"
-
+#include <memory>
+#include "GraphicsComponent.h"
+#include "InputComponent.h"
+#include "LogicComponent.h"
 
 GO::GO()
 {
 }
+GO::~GO()
+{
+}
+
 
 GO::GO(std::unique_ptr<GraphicsComponent> graphicsComponent, std::unique_ptr<InputComponent> inputComponent, std::unique_ptr<LogicComponent> logicComponent )
 	:
@@ -17,5 +23,6 @@ GO::GO(std::unique_ptr<GraphicsComponent> graphicsComponent, std::unique_ptr<Inp
 void GO::GraphicsUpdate(Camera const & camera) const
 {
 }
+
 
 

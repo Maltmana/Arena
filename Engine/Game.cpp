@@ -1,10 +1,19 @@
 #include "Game.h"
 #include "Logger.h"
+#include "Star.h"
+#include "GO.h"
+#include "Creature.h"
+#include "Camera.h"
+#include "Rect.h"
+#include "UserInputManager.h"
+#include "Colors.h"
 
 Game::Game(Camera & camera, UserInputManager & userInputManager)
 	:
 	m_camera{ camera },
-	m_userInputManager{userInputManager}
+	m_userInputManager{userInputManager},
+	m_clock{},
+	m_creatureHandler{}
 {
 	m_creatureHandler.MoveToContainer(m_creatureHandler.CreateHuman());
 }

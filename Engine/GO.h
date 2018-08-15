@@ -5,15 +5,19 @@
 #include "InputComponent.h"
 #include "LogicComponent.h"
 
-class Drawable;
+class Camera;
+class Color;
 
 class GO 
 {
 
-public:		
-
+public:	
 	// Initializes unique_ptr components to null
 	GO();
+	~GO();
+
+
+
 
 	// Calls std::move on each parameter
 	GO(std::unique_ptr<GraphicsComponent> graphicsComponent,
@@ -29,6 +33,7 @@ public:
 	std::unique_ptr<GraphicsComponent> m_graphicsComponent;
 	std::unique_ptr<LogicComponent> m_logicComponent;
 	std::unique_ptr<InputComponent> m_inputComponent;
+
 
 
 
