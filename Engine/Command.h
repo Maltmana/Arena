@@ -2,13 +2,13 @@
 #include <iostream>
 #include "Camera.h"
 #include "GWO.h"
-#include "CreatureHandler.h"
+#include "CreatureCreator.h"
 #include "Mouse.h"
 #include "GameMath.h"
 #include "FileIO.h"
 
 // TODO : passing all params in like this is so stupid!!!!
-#define EXECUTEPARAM CreatureHandler & creatureHandler, Mouse & mouse, GWO & gWO, const float & offsetRate, Camera const & camera, FileIO & fileIO
+#define EXECUTEPARAM CreatureCreator & creatureCreator, Mouse & mouse, GWO & gWO, const float & offsetRate, Camera const & camera, FileIO & fileIO, std::vector<std::unique_ptr<GWO>> &  mainGWOContainer
 
 /* Represents game actions. Uses Command pattern */
 class Command
@@ -60,8 +60,10 @@ class CreateAtCursorCommand : public Command
 public:
 	virtual void execute(EXECUTEPARAM) override
 	{
-		creatureHandler.CreateHuman(); // TODO : have both these lines in one? if CreateHuman returns reference to the creature just emplaced.
-		creatureHandler.creatures.back().get()->m_position = GameMath::WindowCoordinatesToGameWorldCoordinates((Vec2)mouse.GetPos(),camera); // TODO ; is casting appropriate here?
+		 // TODO make this event based...
+
+		mainGWOContainer.emplace_back(creatureCreator.CreateHuman()); // TODO : have both these lines in one? if CreateHuman returns reference to the creature just emplaced.
+		mainGWOContainer.back().get()->m_position = GameMath::WindowCoordinatesToGameWorldCoordinates((Vec2)mouse.GetPos(),camera); // TODO ; is casting appropriate here?
 			
 	}
 };

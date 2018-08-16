@@ -25,17 +25,11 @@
     <Filter Include="Header Files\Arena">
       <UniqueIdentifier>{1bd4293e-650e-413d-bd6e-19f9496058d5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Arena\GameObjectHandlers">
-      <UniqueIdentifier>{7c8302e7-2f95-4e17-9a65-02c1e02cad77}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Arena\SuperComponents">
       <UniqueIdentifier>{a96754d4-8fbd-4da7-b2f9-f08560719e19}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Arena\SuperComponents\UserInputManager">
       <UniqueIdentifier>{a85bf60b-419d-4cb6-9d3b-1d3fbbbb31e8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Arena\GOComponents">
-      <UniqueIdentifier>{8ddda724-4f7f-470e-b3b7-c473781773e0}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Arena\SuperComponents\Camera">
       <UniqueIdentifier>{696d7ba6-5be1-4ebf-be24-2734df202411}</UniqueIdentifier>
@@ -51,6 +45,12 @@
     </Filter>
     <Filter Include="Header Files\Arena\SuperComponents\FileIO">
       <UniqueIdentifier>{2642c9bb-09d8-4e5c-81e7-3364ecb1a8a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Arena\CWOCreators">
+      <UniqueIdentifier>{7c8302e7-2f95-4e17-9a65-02c1e02cad77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Arena\GWOComponents">
+      <UniqueIdentifier>{8ddda724-4f7f-470e-b3b7-c473781773e0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -100,10 +100,10 @@
       <Filter>Header Files\Helper</Filter>
     </ClInclude>
     <ClInclude Include="GraphicsComponent.h">
-      <Filter>Header Files\Arena\GOComponents</Filter>
+      <Filter>Header Files\Arena\GWOComponents</Filter>
     </ClInclude>
     <ClInclude Include="InputComponent.h">
-      <Filter>Header Files\Arena\GOComponents</Filter>
+      <Filter>Header Files\Arena\GWOComponents</Filter>
     </ClInclude>
     <ClInclude Include="Creature.h">
       <Filter>Header Files\Arena\GWO %28Game World Objects%29\Creatures</Filter>
@@ -121,10 +121,7 @@
       <Filter>Header Files\Arena\SuperComponents\UserInputManager</Filter>
     </ClInclude>
     <ClInclude Include="LogicComponent.h">
-      <Filter>Header Files\Arena\GOComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="CreatureHandler.h">
-      <Filter>Header Files\Arena\GameObjectHandlers</Filter>
+      <Filter>Header Files\Arena\GWOComponents</Filter>
     </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
@@ -146,6 +143,9 @@
     </ClInclude>
     <ClInclude Include="Logger.h">
       <Filter>Header Files\Arena</Filter>
+    </ClInclude>
+    <ClInclude Include="CreatureCreator.h">
+      <Filter>Header Files\Arena\CWOCreators</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -28,7 +28,7 @@
 #include "Rect.h"
 #include "Clock.h"
 #include "UserInputManager.h"
-#include "CreatureHandler.h"
+#include "CreatureCreator.h"
 
 class FileIO;
 
@@ -51,19 +51,17 @@ private:
 	UserInputManager & m_userInputManager;
 	FileIO m_fileIO;
 
-	// GAME OBJECT HANDLERS
-	CreatureHandler m_creatureHandler;
-
-	
-	// FIRST ORDER
 	Clock m_clock;
 
-	// SECOND ORDER
+	//Game World Stuff
+
+	std::vector<std::unique_ptr<GWO>> m_MainGWOContainer;
+
+	// GWO Creators
+	CreatureCreator m_creatureCreator;
 
 
 	// TO BE ORGANIZED BETTER AND MORE MODULARLY
-
-	// ADD GENERIC CONTAINER FOR ALL GAME OBJECTS
 
 	bool m_drawHitboxMode = true;
 

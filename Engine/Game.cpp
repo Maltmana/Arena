@@ -8,7 +8,7 @@ Game::Game(Camera & camera, UserInputManager & userInputManager)
 	m_camera{ camera },
 	m_userInputManager{userInputManager}
 {
-	m_creatureHandler.CreateHuman();
+	m_MainGWOContainer.emplace_back(m_creatureCreator.CreateOgre());
 }
 
 void Game::UpdateModel()
@@ -25,7 +25,7 @@ void Game::UpdateModel()
 	{
 		for (auto command : commands)
 		{
-			command->execute(m_creatureHandler, m_userInputManager.GetMouse(), activeGWO, (float)speed, m_camera, m_fileIO);
+			command->execute(m_creatureCreator, m_userInputManager.GetMouse(), activeGWO, (float)speed, m_camera, m_fileIO, m_MainGWOContainer);
 		}
 	}
 
@@ -75,9 +75,9 @@ void Game::ComposeFrame()
 	// Only drawing hitboxes for now
 	if (m_drawHitboxMode)
 	{
-		for (auto & c : m_creatureHandler.creatures)
+		for (auto & gwo : m_MainGWOContainer)
 		{
-			m_camera.DrawHitbox(*c);
+			m_camera.DrawHitbox(*gwo);
 		}
 	}
 
