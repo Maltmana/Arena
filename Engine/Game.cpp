@@ -1,6 +1,8 @@
 #include "Game.h"
 #include "FileIO.h"
 
+bool Game::m_SaveGameFlag = false;
+
 Game::Game(Camera & camera, UserInputManager & userInputManager)
 	:
 	m_camera{ camera },

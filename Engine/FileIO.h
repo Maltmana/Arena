@@ -10,7 +10,6 @@
 #include <sstream>
 #include <Windows.h>
 
-
 // we must connect the cereal archive to logicComponents seralize function.
 //
 //using namespace std;
@@ -41,6 +40,11 @@ class FileIO
 public:
 	void QuickSave()
 	{
+		SaveGame();
+	}	
+
+	void SaveGame()
+	{
 		if (CreateDirectory(m_saveGamesFolder, NULL) || ERROR_ALREADY_EXISTS == GetLastError())
 		{
 			std::ofstream ofs(m_ofFilePath, std::ios::out | std::ios::trunc);
@@ -56,7 +60,7 @@ public:
 		{
 			// TODO : FAILED TO CREATE DIRECTORY ERROR MESG
 		}
-	}	
+	}
 
 	std::string m_ofFilePath = "SavedGames\\Quicksave.XML"; // TODO : this really should be handled with concotanating savedGamesFolder
 	LPCWSTR m_saveGamesFolder = L"SavedGames";

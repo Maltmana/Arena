@@ -67,6 +67,9 @@ private:
 
 	bool m_drawHitboxMode = true;
 
+public:
+	static bool m_SaveGameFlag;
+
 	
 
 
