@@ -1,38 +1,32 @@
 #include "Game.h"
-#include "Logger.h"
-#include "Star.h"
-#include "GO.h"
-#include "Creature.h"
-#include "Camera.h"
-#include "Rect.h"
-#include "UserInputManager.h"
-#include "Colors.h"
+#include "FileIO.h"
+
+bool Game::m_SaveGameFlag = false;
 
 Game::Game(Camera & camera, UserInputManager & userInputManager)
 	:
 	m_camera{ camera },
-	m_userInputManager{userInputManager},
-	m_clock{},
-	m_creatureHandler{}
+	m_userInputManager{userInputManager}
 {
-	m_creatureHandler.MoveToContainer(m_creatureHandler.CreateHuman());
+	m_creatureHandler.CreateHuman();
 }
 
 void Game::UpdateModel()
 {
-	Logger::GetInstance();
-
 	// TODO : handle logic components.
 
-	double frameTime = m_clock.GetCounterS();
+	double frameTime = m_clock.GetCounterS(); // TODO ; simplify timer function to just be one call and the return is old time.
 	m_clock.StartCounter();
-	GO & activeGO = m_camera;
+	GWO & activeGWO = m_camera;
 	double speed = 100.f*frameTime;
 
-	Command * command = m_userInputManager.HandleInput();
-	if (command)
+	std::vector<Command *> commands = m_userInputManager.HandleInput();
+	if (!commands.empty())
 	{
-		command->execute(activeGO, (float)speed);
+		for (auto command : commands)
+		{
+			command->execute(m_creatureHandler, m_userInputManager.GetMouse(), activeGWO, (float)speed, m_camera, m_fileIO);
+		}
 	}
 
 /*
@@ -90,7 +84,7 @@ void Game::ComposeFrame()
 	/*ss.Update(m_camera);*/
 
 	//const std::vector<Vec2> GUIrect = { {-200, -200}, { 0,0 } };
-	//GO GUI(GUIrect, camera.GetPos(), Colors::Magenta);
+	//GWO GUI(GUIrect, camera.GetPos(), Colors::Magenta);
 
 	//GUI.Update(camera);
 }

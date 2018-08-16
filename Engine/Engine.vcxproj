@@ -95,6 +95,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\Users\wesle\source\repos\Arena\Engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -145,12 +146,13 @@
     <ClInclude Include="Colors.h" />
     <ClInclude Include="COMInitializer.h" />
     <ClInclude Include="Command.h" />
-    <ClInclude Include="CoordinateTransformer.h" />
     <ClInclude Include="Creature.h" />
     <ClInclude Include="CreatureHandler.h" />
     <ClInclude Include="Drawable.h" />
     <ClInclude Include="DXErr.h" />
-    <ClInclude Include="GO.h" />
+    <ClInclude Include="FileIO.h" />
+    <ClInclude Include="GameMath.h" />
+    <ClInclude Include="GWO.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="GraphicsComponent.h" />
@@ -173,12 +175,11 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Clock.cpp" />
     <ClCompile Include="COMInitializer.cpp" />
-    <ClCompile Include="CoordinateTransformer.cpp" />
     <ClCompile Include="Creature.cpp" />
     <ClCompile Include="CreatureHandler.cpp" />
     <ClCompile Include="Drawable.cpp" />
     <ClCompile Include="DXErr.cpp" />
-    <ClCompile Include="GO.cpp" />
+    <ClCompile Include="GWO.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="GraphicsComponent.cpp" />

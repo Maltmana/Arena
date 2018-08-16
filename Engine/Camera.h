@@ -1,13 +1,11 @@
 #pragma once
 #include "Vec2.h"
 
-#include "CoordinateTransformer.h"
-
 #include "Graphics.h"
 
-#include "GO.h"
+#include "GWO.h"
 
-class Camera : public GO // TODO : elegantly prevent multiple Cameras from existing.
+class Camera : public GWO // TODO : elegantly prevent multiple Cameras from existing.
 {
 public:
 
@@ -15,8 +13,7 @@ public:
 	Camera(Graphics & graphics);
 	Camera(const Camera & camera) // TODO : put this in cpp
 		:
-		GO(),
-		m_ct{camera.m_ct},
+		GWO(),
 		m_graphics{camera.m_graphics}
 	{
 		numberOfCameras++;
@@ -30,17 +27,20 @@ public:
 
 
 	/*Takes Entities vertices model, applies transform based on entities position and then sends it down rendering pipeline*/
-	void DrawHitbox(GO const & GO) const;
+	void DrawHitbox(GWO const & GWO) const;
 
 	void BeginFrame();
 	void EndFrame();
+
+	int GetScreenWidth() const { return m_graphics.ScreenWidth; };
+	int GetScreenHeight() const { return m_graphics.ScreenHeight; };
+
 
 
 
 private:
 	static int numberOfCameras;
 
-	CoordinateTransformer m_ct;
 	Graphics & m_graphics;
 
 };

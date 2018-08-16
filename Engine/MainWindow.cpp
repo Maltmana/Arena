@@ -181,8 +181,11 @@ LRESULT MainWindow::HandleMsg( HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam )
 			{
 				ReleaseCapture();
 				mouse.OnMouseLeave();
+				if (mouse.IsInWindow())
+				{
 				mouse.OnLeftReleased( pt.x,pt.y );
 				mouse.OnRightReleased( pt.x,pt.y );
+				}
 			}
 		}
 		break;

@@ -19,13 +19,18 @@
  *	along with The Chili DirectX Framework.  If not, see <http://www.gnu.org/licenses/>.  *
  ******************************************************************************************/
 #pragma once
-#include "CreatureHandler.h" // TODO : figure out how to remove these from the header with forward declaration
+
+
+#include "Star.h"
+#include "GWO.h"
+#include "Creature.h"
+#include "Camera.h"
+#include "Rect.h"
 #include "Clock.h"
+#include "UserInputManager.h"
+#include "CreatureHandler.h"
 
-class Camera;
-class UserInputManager;
-
-
+class FileIO;
 
 class Game
 {
@@ -44,6 +49,7 @@ private:
 	// SUPER COMPONENTS
 	Camera & m_camera;
 	UserInputManager & m_userInputManager;
+	FileIO m_fileIO;
 
 	// GAME OBJECT HANDLERS
 	CreatureHandler m_creatureHandler;
@@ -60,6 +66,9 @@ private:
 	// ADD GENERIC CONTAINER FOR ALL GAME OBJECTS
 
 	bool m_drawHitboxMode = true;
+
+public:
+	static bool m_SaveGameFlag;
 
 	
 

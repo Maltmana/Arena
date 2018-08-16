@@ -9,23 +9,41 @@ UserInputManager::UserInputManager(MainWindow & window)
 {
 	assert(numberOfUserInputManagers < 1);
 
-		m_W = &upCommand;	
-		m_S = &downCommand;
-		m_A = &leftCommand;
-		m_D = &rightCommand;
+	// TODO : have this command setter be linked to some kind of INI file or something
+
+		m_W = &m_upCommand;	
+		m_S = &m_downCommand;
+		m_A = &m_leftCommand;
+		m_D = &m_rightCommand;
+		m_LClick = &m_createAtCursorCommand;
+		m_F5 = &m_quickSaveCommand;
 		numberOfUserInputManagers++;
 
 }
 
-Command * UserInputManager::HandleInput() // TODO : make it so that it responds to more than one button at once
+std::vector<Command *> UserInputManager::HandleInput() // TODO : make it so that it responds to more than one button at once
 {
-	if (m_window.kbd.KeyIsPressed('W')) return  m_W; // TODO : understand wtf this crazy thing is.
-	if (m_window.kbd.KeyIsPressed('S')) return  m_S;
-	if (m_window.kbd.KeyIsPressed('A')) return  m_A; // TODO : understand wtf this crazy thing is.
-	if (m_window.kbd.KeyIsPressed('D')) return  m_D;
+	std::vector<Command *> commands;
+
+	if (m_window.kbd.KeyIsPressed('W')) commands.push_back(m_W); // TODO : understand wtf this crazy thing is.
+	if (m_window.kbd.KeyIsPressed('S')) commands.push_back(m_S);
+	if (m_window.kbd.KeyIsPressed('A')) commands.push_back(m_A); // TODO : understand wtf this crazy thing is.
+	if (m_window.kbd.KeyIsPressed('D')) commands.push_back(m_D);
+	if (m_window.mouse.LeftIsReleased())
+	{
+		commands.push_back(m_LClick);
+	}
+	if (m_window.mouse.RightIsClickedOnce())
+	{
+		commands.push_back(m_LClick);
+	}
+	if (m_window.kbd.KeyIsPressed(VK_F5))
+	{
+		commands.push_back(m_F5);
+	}
 
 	// nothing was pressed. do nothing.
-	return NULL;
+	return commands;
 }
 
 
@@ -42,7 +60,9 @@ Mouse & UserInputManager::GetMouse()
 
 int UserInputManager::numberOfUserInputManagers = 0;
 
-LeftCommand UserInputManager::leftCommand;
-UpCommand UserInputManager::upCommand;
-DownCommand UserInputManager::downCommand;
-RightCommand UserInputManager::rightCommand;
+LeftCommand UserInputManager::m_leftCommand;
+UpCommand UserInputManager::m_upCommand;
+DownCommand UserInputManager::m_downCommand;
+RightCommand UserInputManager::m_rightCommand;
+CreateAtCursorCommand UserInputManager::m_createAtCursorCommand;
+QuickSaveCommand UserInputManager::m_quickSaveCommand;
