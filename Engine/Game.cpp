@@ -1,5 +1,5 @@
 #include "Game.h"
-#include "FileIO.h"
+#include "FileOutput.h"
 
 Game::Game(Camera & camera, UserInputManager & userInputManager)
 	:
@@ -19,8 +19,6 @@ void Game::BeginFrame()
 void Game::UpdateInput()
 {
 
-	// m_fileInput.update();
-
 }
 
 void Game::UpdateController()
@@ -34,7 +32,7 @@ void Game::UpdateController()
 	{
 		for (auto command : commands)
 		{
-			command->execute(m_creatureCreator, m_userInputManager.GetMouse(), controlledGWO, (float)GWOSpeedMultByFrametime, m_camera, m_fileIO, m_MainGWOContainer);
+			command->execute(m_creatureCreator, m_userInputManager.GetMouse(), controlledGWO, (float)GWOSpeedMultByFrametime, m_camera, m_fileOutput, m_MainGWOContainer);
 		}
 	}
 }
@@ -85,6 +83,7 @@ void Game::UpdateModel()
 	
 void Game::UpdateOutput()
 {
+	// Graphics output
 	if (m_drawHitboxMode)
 	{
 		for (auto & gwo : m_MainGWOContainer)
@@ -92,6 +91,9 @@ void Game::UpdateOutput()
 			m_camera.DrawHitbox(*gwo);
 		}
 	}
+
+	// File output
+	m_fileOutput.Update();
 }
 
 void Game::Go()

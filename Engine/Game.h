@@ -30,7 +30,7 @@
 #include "UserInputManager.h"
 #include "CreatureCreator.h"
 
-class FileIO;
+class FileOutput;
 
 class Game
 {
@@ -51,7 +51,7 @@ private:
 	void UpdateOutput();
 
 	// INPUT
-	FileIO m_fileIO;
+	FileOutput m_fileOutput;
 
 	// CONTROLLER
 	UserInputManager & m_userInputManager;

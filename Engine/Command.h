@@ -5,10 +5,10 @@
 #include "CreatureCreator.h"
 #include "Mouse.h"
 #include "GameMath.h"
-#include "FileIO.h"
+#include "FileOutput.h"
 
 // TODO : passing all params in like this is so stupid!!!!
-#define EXECUTEPARAM CreatureCreator & creatureCreator, Mouse & mouse, GWO & gWO, const float & offsetRate, Camera const & camera, FileIO & fileIO, std::vector<std::unique_ptr<GWO>> &  mainGWOContainer
+#define EXECUTEPARAM CreatureCreator & creatureCreator, Mouse & mouse, GWO & gWO, const float & offsetRate, Camera const & camera, FileOutput & fileOutput, std::vector<std::unique_ptr<GWO>> &  mainGWOContainer
 
 /* Represents game actions. Uses Command pattern */
 class Command
@@ -73,7 +73,7 @@ class QuickSaveCommand : public Command
 public:
 	virtual void execute(EXECUTEPARAM) override
 	{
-		fileIO.QuickSave();
+		fileOutput.RequestSave();
 	}
 };
 

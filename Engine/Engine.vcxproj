@@ -150,9 +150,8 @@
     <ClInclude Include="CreatureCreator.h" />
     <ClInclude Include="Drawable.h" />
     <ClInclude Include="DXErr.h" />
-    <ClInclude Include="FileInput.h" />
-    <ClInclude Include="FileIO.h" />
     <ClInclude Include="FileOutput.h" />
+    <ClInclude Include="FileIO.h" />
     <ClInclude Include="GameMath.h" />
     <ClInclude Include="GWO.h" />
     <ClInclude Include="Game.h" />

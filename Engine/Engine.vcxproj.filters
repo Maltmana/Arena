@@ -49,28 +49,22 @@
     <Filter Include="Header Files\Controller\LowLevel">
       <UniqueIdentifier>{a4a03d01-1763-4ce0-825f-612a7a98bd9d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Output\Camera">
-      <UniqueIdentifier>{696d7ba6-5be1-4ebf-be24-2734df202411}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Output\Camera\LowLevel">
+    <Filter Include="Header Files\Output\LowLevel">
       <UniqueIdentifier>{2c98e39a-f428-47ac-bd84-7b907f29f8b0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Output\Camera\LowLevel\Graphics">
+    <Filter Include="Header Files\Output\LowLevel\Graphics">
       <UniqueIdentifier>{c6c748db-cbc2-4695-9e9d-109c727364e6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Output\Camera\LowLevel\Graphics\GraphicsPipeline">
+    <Filter Include="Header Files\Output\LowLevel\Graphics\GraphicsPipeline">
       <UniqueIdentifier>{ebd35961-6a90-438b-bdfe-18b3d186d928}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Output\Camera\LowLevel\Audio">
+    <Filter Include="Header Files\Output\LowLevel\Audio">
       <UniqueIdentifier>{fa818b04-8293-43d8-8373-83f972ee2ac0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Input\LowLevel">
-      <UniqueIdentifier>{6d6088f1-bca3-4bc9-859f-acbb0e9aa269}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Drawable.h">
-      <Filter>Header Files\Output\Camera\LowLevel\Graphics\GraphicsPipeline</Filter>
+      <Filter>Header Files\Output\LowLevel\Graphics\GraphicsPipeline</Filter>
     </ClInclude>
     <ClInclude Include="Vec2.h">
       <Filter>Header Files\Misc</Filter>
@@ -101,9 +95,6 @@
     </ClInclude>
     <ClInclude Include="LogicComponent.h">
       <Filter>Header Files\Model\GWOComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>Header Files\Output\Camera</Filter>
     </ClInclude>
     <ClInclude Include="GWO.h">
       <Filter>Header Files\Model\GWO %28Game World Objects%29</Filter>
@@ -139,16 +130,16 @@
       <Filter>Header Files\Input</Filter>
     </ClInclude>
     <ClInclude Include="Sound.h">
-      <Filter>Header Files\Output\Camera\LowLevel\Audio</Filter>
+      <Filter>Header Files\Output\LowLevel\Audio</Filter>
     </ClInclude>
     <ClInclude Include="SoundEffect.h">
-      <Filter>Header Files\Output\Camera\LowLevel\Audio</Filter>
+      <Filter>Header Files\Output\LowLevel\Audio</Filter>
     </ClInclude>
     <ClInclude Include="Colors.h">
-      <Filter>Header Files\Output\Camera\LowLevel\Graphics</Filter>
+      <Filter>Header Files\Output\LowLevel\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Graphics.h">
-      <Filter>Header Files\Output\Camera\LowLevel\Graphics</Filter>
+      <Filter>Header Files\Output\LowLevel\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Mouse.h">
       <Filter>Header Files\Controller\LowLevel</Filter>
@@ -159,14 +150,14 @@
     <ClInclude Include="MainWindow.h">
       <Filter>Header Files\Controller\LowLevel</Filter>
     </ClInclude>
-    <ClInclude Include="FileInput.h">
-      <Filter>Header Files\Input</Filter>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FileOutput.h">
       <Filter>Header Files\Output</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files\Output</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
