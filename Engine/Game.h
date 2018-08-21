@@ -57,7 +57,7 @@ private:
 	UserInputManager & m_userInputManager;
 
 	// MODEL
-	std::vector<std::unique_ptr<GWO>> m_MainGWOContainer;
+	std::vector<std::unique_ptr<GWO>> m_mainGWOContainer;
 	CreatureCreator m_creatureCreator;
 
 	// OUTPUT

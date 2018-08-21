@@ -10,30 +10,6 @@
 #include <sstream>
 #include <Windows.h>
 
-// we must connect the cereal archive to logicComponents seralize function.
-//
-//using namespace std;
-//
-//struct Human
-//{
-//	string name = "kevin";
-//	int age = 22;
-//	double BAC = 0.8;
-//	string description = "kevin is an amazing bad ass dude whom many people enjoy being around, especially beautiful women.";
-//	string hairColor = "blonde";
-//
-//	template<class Archive>
-//	void serialize(Archive & archive)
-//	{
-//		archive(CEREAL_NVP(name), CEREAL_NVP(age), CEREAL_NVP(BAC), CEREAL_NVP(description));
-//	}
-//
-//};
-	/*	Human kevin;
-		char x = 'x';
-		int someInt;
-		double d;
-*/
 
 class FileIO
 {

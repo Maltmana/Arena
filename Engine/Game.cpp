@@ -6,7 +6,7 @@ Game::Game(Camera & camera, UserInputManager & userInputManager)
 	m_camera{ camera },
 	m_userInputManager{userInputManager}
 {
-	m_MainGWOContainer.emplace_back(m_creatureCreator.CreateOgre()); // TEMP TEST
+	m_mainGWOContainer.emplace_back(m_creatureCreator.CreateOgre()); // TEMP TEST
 }
 
 void Game::BeginFrame()
@@ -25,14 +25,14 @@ void Game::UpdateController()
 {
 	GWO & controlledGWO = m_camera;
 
-	double GWOSpeedMultByFrametime = controlledGWO.speed * m_clock.frameTime; // TEMP PUT THIS SOMEWHERE ELSE!!
+	double GWOSpeedMultByFrametime = controlledGWO.m_speed * m_clock.frameTime; // TEMP PUT THIS SOMEWHERE ELSE!!
 
 	std::vector<Command *> commands = m_userInputManager.HandleInput();
 	if (!commands.empty())
 	{
 		for (auto command : commands)
 		{
-			command->execute(m_creatureCreator, m_userInputManager.GetMouse(), controlledGWO, (float)GWOSpeedMultByFrametime, m_camera, m_fileOutput, m_MainGWOContainer);
+			command->execute(m_creatureCreator, m_userInputManager.GetMouse(), controlledGWO, (float)GWOSpeedMultByFrametime, m_camera, m_fileOutput, m_mainGWOContainer);
 		}
 	}
 }
@@ -86,14 +86,14 @@ void Game::UpdateOutput()
 	// Graphics output
 	if (m_drawHitboxMode)
 	{
-		for (auto & gwo : m_MainGWOContainer)
+		for (auto & gwo : m_mainGWOContainer)
 		{
 			m_camera.DrawHitbox(*gwo);
 		}
 	}
 
 	// File output
-	m_fileOutput.Update(m_MainGWOContainer);
+	m_fileOutput.Update(m_mainGWOContainer);
 }
 
 void Game::Go()
