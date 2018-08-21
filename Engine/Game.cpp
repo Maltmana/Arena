@@ -93,7 +93,7 @@ void Game::UpdateOutput()
 	}
 
 	// File output
-	m_fileOutput.Update();
+	m_fileOutput.Update(m_MainGWOContainer);
 }
 
 void Game::Go()

@@ -1,10 +1,10 @@
 #include "FileOutput.h"
 
-void FileOutput::Update()
+void FileOutput::Update(std::vector<std::unique_ptr<GWO>> const & mainGWOContainer)
 {
 	if (m_toSaveFlag)
 	{
-		SaveGame();
+		SaveGame(mainGWOContainer);
 		m_toSaveFlag = false;
 	}
 }
@@ -15,7 +15,7 @@ void FileOutput::RequestSave(std::string saveFileTitle)
 	m_saveFileTitle = saveFileTitle;
 }
 
-void FileOutput::SaveGame() const
+void FileOutput::SaveGame(std::vector<std::unique_ptr<GWO>> const & mainGWOContainer) const
 {
 	std::string filePath = "SavedGames\\" + m_saveFileTitle; // TODO : this really should be handled with concotanating savedGamesFolder
 
