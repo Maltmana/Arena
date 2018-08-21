@@ -25,6 +25,7 @@ public:
 
 	 Vec2 m_position = { 0,0 };
 	 float m_scale = 1.0f; // scale is for camera which is also a GWO
+	 double speed = 100.0;
 
 	std::unique_ptr<GraphicsComponent> m_graphicsComponent;
 	std::unique_ptr<LogicComponent> m_logicComponent;

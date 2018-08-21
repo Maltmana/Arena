@@ -43,8 +43,12 @@ public:
 	void Go();
 
 private:
-	void ComposeFrame();
+
+	void BeginFrame();
+	void UpdateInput();
+	void UpdateController();
 	void UpdateModel();
+	void UpdateOutput();
 
 	// SUPER COMPONENTS
 	Camera & m_camera;
@@ -65,8 +69,7 @@ private:
 
 	bool m_drawHitboxMode = true;
 
-public:
-	static bool m_SaveGameFlag;
+
 
 	
 

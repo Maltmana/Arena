@@ -15,12 +15,14 @@ public:
 
 	void TestClock(); // TODO : Make this a unit test
 
-
+	double frameTime = 0.0;
 
 private:
 	double pcFreq = 0.0;
 	__int64 counterStart = 0;
 	__int64 prevCounter;
+
+
 
 
 

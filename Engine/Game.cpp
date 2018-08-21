@@ -1,33 +1,45 @@
 #include "Game.h"
 #include "FileIO.h"
 
-bool Game::m_SaveGameFlag = false;
-
 Game::Game(Camera & camera, UserInputManager & userInputManager)
 	:
 	m_camera{ camera },
 	m_userInputManager{userInputManager}
 {
-	m_MainGWOContainer.emplace_back(m_creatureCreator.CreateOgre());
+	m_MainGWOContainer.emplace_back(m_creatureCreator.CreateOgre()); // TEMP TEST
 }
 
-void Game::UpdateModel()
+void Game::BeginFrame()
 {
-	// TODO : handle logic components.
-
-	double frameTime = m_clock.GetCounterS(); // TODO ; simplify timer function to just be one call and the return is old time.
+	m_clock.frameTime = m_clock.GetCounterS(); // TODO ; simplify timer function to just be one call and the return is old time.
 	m_clock.StartCounter();
-	GWO & activeGWO = m_camera;
-	double speed = 100.f*frameTime;
+}
+
+void Game::UpdateInput()
+{
+
+	// m_fileInput.update();
+
+}
+
+void Game::UpdateController()
+{
+	GWO & controlledGWO = m_camera;
+
+	double GWOSpeedMultByFrametime = controlledGWO.speed * m_clock.frameTime; // TEMP PUT THIS SOMEWHERE ELSE!!
 
 	std::vector<Command *> commands = m_userInputManager.HandleInput();
 	if (!commands.empty())
 	{
 		for (auto command : commands)
 		{
-			command->execute(m_creatureCreator, m_userInputManager.GetMouse(), activeGWO, (float)speed, m_camera, m_fileIO, m_MainGWOContainer);
+			command->execute(m_creatureCreator, m_userInputManager.GetMouse(), controlledGWO, (float)GWOSpeedMultByFrametime, m_camera, m_fileIO, m_MainGWOContainer);
 		}
 	}
+}
+
+void Game::UpdateModel()
+{
 
 /*
 		if (wnd.kbd.KeyIsPressed(VK_RETURN))
@@ -70,9 +82,8 @@ void Game::UpdateModel()
 		*/
 }
 	
-void Game::ComposeFrame()
+void Game::UpdateOutput()
 {
-	// Only drawing hitboxes for now
 	if (m_drawHitboxMode)
 	{
 		for (auto & gwo : m_MainGWOContainer)
@@ -80,19 +91,13 @@ void Game::ComposeFrame()
 			m_camera.DrawHitbox(*gwo);
 		}
 	}
-
-	/*ss.Update(m_camera);*/
-
-	//const std::vector<Vec2> GUIrect = { {-200, -200}, { 0,0 } };
-	//GWO GUI(GUIrect, camera.GetPos(), Colors::Magenta);
-
-	//GUI.Update(camera);
 }
 
 void Game::Go()
 {
-	m_camera.BeginFrame();
+	BeginFrame();
+	UpdateInput();
+	UpdateController();
 	UpdateModel();
-	ComposeFrame();
-	m_camera.EndFrame();
+	UpdateOutput();
 }
