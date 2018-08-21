@@ -16,136 +16,157 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{8b6c92a8-f65d-451e-80e3-d65773602b92}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Framework">
-      <UniqueIdentifier>{26162340-686e-4bbe-bbdd-f6f8418f2d86}</UniqueIdentifier>
+    <Filter Include="Header Files\Input">
+      <UniqueIdentifier>{c1154a74-34e1-4d0d-81fb-57d5a4308772}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Helper">
-      <UniqueIdentifier>{67ba52c5-082b-4d9e-9c29-3b012d1525d6}</UniqueIdentifier>
+    <Filter Include="Header Files\Output">
+      <UniqueIdentifier>{0a2b11d4-3672-42ee-9ffa-4e992173f5a3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Arena">
-      <UniqueIdentifier>{1bd4293e-650e-413d-bd6e-19f9496058d5}</UniqueIdentifier>
+    <Filter Include="Header Files\Model">
+      <UniqueIdentifier>{bf85468a-15bc-4209-b4a2-e1c01ace3e3a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Arena\SuperComponents">
-      <UniqueIdentifier>{a96754d4-8fbd-4da7-b2f9-f08560719e19}</UniqueIdentifier>
+    <Filter Include="Header Files\Controller">
+      <UniqueIdentifier>{a64e5feb-e6a4-4e83-a7bd-772f1675d89c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Arena\SuperComponents\UserInputManager">
-      <UniqueIdentifier>{a85bf60b-419d-4cb6-9d3b-1d3fbbbb31e8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Arena\SuperComponents\Camera">
-      <UniqueIdentifier>{696d7ba6-5be1-4ebf-be24-2734df202411}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Arena\SuperComponents\Camera\GraphicsPipeline">
-      <UniqueIdentifier>{ebd35961-6a90-438b-bdfe-18b3d186d928}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Arena\GWO %28Game World Objects%29">
-      <UniqueIdentifier>{eb43cae5-94c2-4d35-b284-02f2d4f4bacf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Arena\GWO %28Game World Objects%29\Creatures">
-      <UniqueIdentifier>{ab06d428-f752-4d45-bd29-d6eb49bd1866}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Arena\SuperComponents\FileIO">
-      <UniqueIdentifier>{2642c9bb-09d8-4e5c-81e7-3364ecb1a8a5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Arena\CWOCreators">
+    <Filter Include="Header Files\Model\GWOCreators">
       <UniqueIdentifier>{7c8302e7-2f95-4e17-9a65-02c1e02cad77}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Arena\GWOComponents">
+    <Filter Include="Header Files\Model\GWOComponents">
       <UniqueIdentifier>{8ddda724-4f7f-470e-b3b7-c473781773e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Model\GWO %28Game World Objects%29">
+      <UniqueIdentifier>{eb43cae5-94c2-4d35-b284-02f2d4f4bacf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Model\GWO %28Game World Objects%29\Creatures">
+      <UniqueIdentifier>{ab06d428-f752-4d45-bd29-d6eb49bd1866}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Controller\UserInputManager">
+      <UniqueIdentifier>{a85bf60b-419d-4cb6-9d3b-1d3fbbbb31e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Misc">
+      <UniqueIdentifier>{67ba52c5-082b-4d9e-9c29-3b012d1525d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Controller\LowLevel">
+      <UniqueIdentifier>{a4a03d01-1763-4ce0-825f-612a7a98bd9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Output\Camera">
+      <UniqueIdentifier>{696d7ba6-5be1-4ebf-be24-2734df202411}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Output\Camera\LowLevel">
+      <UniqueIdentifier>{2c98e39a-f428-47ac-bd84-7b907f29f8b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Output\Camera\LowLevel\Graphics">
+      <UniqueIdentifier>{c6c748db-cbc2-4695-9e9d-109c727364e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Output\Camera\LowLevel\Graphics\GraphicsPipeline">
+      <UniqueIdentifier>{ebd35961-6a90-438b-bdfe-18b3d186d928}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Output\Camera\LowLevel\Audio">
+      <UniqueIdentifier>{fa818b04-8293-43d8-8373-83f972ee2ac0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Input\LowLevel">
+      <UniqueIdentifier>{6d6088f1-bca3-4bc9-859f-acbb0e9aa269}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ChiliException.h">
-      <Filter>Header Files\Framework</Filter>
-    </ClInclude>
-    <ClInclude Include="ChiliWin.h">
-      <Filter>Header Files\Framework</Filter>
-    </ClInclude>
-    <ClInclude Include="Colors.h">
-      <Filter>Header Files\Framework</Filter>
-    </ClInclude>
-    <ClInclude Include="COMInitializer.h">
-      <Filter>Header Files\Framework</Filter>
-    </ClInclude>
-    <ClInclude Include="DXErr.h">
-      <Filter>Header Files\Framework</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics.h">
-      <Filter>Header Files\Framework</Filter>
-    </ClInclude>
-    <ClInclude Include="Keyboard.h">
-      <Filter>Header Files\Framework</Filter>
-    </ClInclude>
-    <ClInclude Include="MainWindow.h">
-      <Filter>Header Files\Framework</Filter>
-    </ClInclude>
-    <ClInclude Include="Mouse.h">
-      <Filter>Header Files\Framework</Filter>
-    </ClInclude>
-    <ClInclude Include="Sound.h">
-      <Filter>Header Files\Framework</Filter>
-    </ClInclude>
-    <ClInclude Include="SoundEffect.h">
-      <Filter>Header Files\Framework</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>Header Files\Framework</Filter>
-    </ClInclude>
     <ClInclude Include="Drawable.h">
-      <Filter>Header Files\Arena\SuperComponents\Camera\GraphicsPipeline</Filter>
+      <Filter>Header Files\Output\Camera\LowLevel\Graphics\GraphicsPipeline</Filter>
     </ClInclude>
     <ClInclude Include="Vec2.h">
-      <Filter>Header Files\Helper</Filter>
+      <Filter>Header Files\Misc</Filter>
     </ClInclude>
     <ClInclude Include="Star.h">
-      <Filter>Header Files\Helper</Filter>
+      <Filter>Header Files\Misc</Filter>
     </ClInclude>
     <ClInclude Include="GraphicsComponent.h">
-      <Filter>Header Files\Arena\GWOComponents</Filter>
+      <Filter>Header Files\Model\GWOComponents</Filter>
     </ClInclude>
     <ClInclude Include="InputComponent.h">
-      <Filter>Header Files\Arena\GWOComponents</Filter>
+      <Filter>Header Files\Model\GWOComponents</Filter>
     </ClInclude>
     <ClInclude Include="Creature.h">
-      <Filter>Header Files\Arena\GWO %28Game World Objects%29\Creatures</Filter>
+      <Filter>Header Files\Model\GWO %28Game World Objects%29\Creatures</Filter>
     </ClInclude>
     <ClInclude Include="Clock.h">
-      <Filter>Header Files\Helper</Filter>
+      <Filter>Header Files\Misc</Filter>
     </ClInclude>
     <ClInclude Include="Rect.h">
-      <Filter>Header Files\Helper</Filter>
+      <Filter>Header Files\Misc</Filter>
     </ClInclude>
     <ClInclude Include="UserInputManager.h">
-      <Filter>Header Files\Arena\SuperComponents\UserInputManager</Filter>
+      <Filter>Header Files\Controller\UserInputManager</Filter>
     </ClInclude>
     <ClInclude Include="Command.h">
-      <Filter>Header Files\Arena\SuperComponents\UserInputManager</Filter>
+      <Filter>Header Files\Controller\UserInputManager</Filter>
     </ClInclude>
     <ClInclude Include="LogicComponent.h">
-      <Filter>Header Files\Arena\GWOComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="pch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files\Arena</Filter>
+      <Filter>Header Files\Model\GWOComponents</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h">
-      <Filter>Header Files\Arena\SuperComponents\Camera</Filter>
+      <Filter>Header Files\Output\Camera</Filter>
     </ClInclude>
     <ClInclude Include="GWO.h">
-      <Filter>Header Files\Arena\GWO %28Game World Objects%29</Filter>
+      <Filter>Header Files\Model\GWO %28Game World Objects%29</Filter>
     </ClInclude>
     <ClInclude Include="GameMath.h">
-      <Filter>Header Files\Helper</Filter>
-    </ClInclude>
-    <ClInclude Include="FileIO.h">
-      <Filter>Header Files\Arena\SuperComponents\FileIO</Filter>
-    </ClInclude>
-    <ClInclude Include="Logger.h">
-      <Filter>Header Files\Arena</Filter>
+      <Filter>Header Files\Misc</Filter>
     </ClInclude>
     <ClInclude Include="CreatureCreator.h">
-      <Filter>Header Files\Arena\CWOCreators</Filter>
+      <Filter>Header Files\Model\GWOCreators</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="ChiliException.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="COMInitializer.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="DXErr.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="ChiliWin.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="FileIO.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>Header Files\Output\Camera\LowLevel\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundEffect.h">
+      <Filter>Header Files\Output\Camera\LowLevel\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Colors.h">
+      <Filter>Header Files\Output\Camera\LowLevel\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics.h">
+      <Filter>Header Files\Output\Camera\LowLevel\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.h">
+      <Filter>Header Files\Controller\LowLevel</Filter>
+    </ClInclude>
+    <ClInclude Include="Keyboard.h">
+      <Filter>Header Files\Controller\LowLevel</Filter>
+    </ClInclude>
+    <ClInclude Include="MainWindow.h">
+      <Filter>Header Files\Controller\LowLevel</Filter>
+    </ClInclude>
+    <ClInclude Include="FileInput.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="FileOutput.h">
+      <Filter>Header Files\Output</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
