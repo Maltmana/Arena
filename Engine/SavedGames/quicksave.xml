@@ -1,54 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <cereal>
-	<*gwo>
+	<null>
 		<m_position.x>0</m_position.x>
 		<m_scale>1</m_scale>
 		<m_speed>100</m_speed>
-	</*gwo>
-	<*gwo>
-		<m_position.x>-63</m_position.x>
+	</null>
+	<null>
+		<m_position.x>0</m_position.x>
 		<m_scale>1</m_scale>
 		<m_speed>100</m_speed>
-	</*gwo>
-	<*gwo>
-		<m_position.x>-165</m_position.x>
+	</null>
+	<null>
+		<m_position.x>61</m_position.x>
 		<m_scale>1</m_scale>
 		<m_speed>100</m_speed>
-	</*gwo>
-	<*gwo>
-		<m_position.x>-39</m_position.x>
+	</null>
+	<null>
+		<m_position.x>77</m_position.x>
 		<m_scale>1</m_scale>
 		<m_speed>100</m_speed>
-	</*gwo>
-	<*gwo>
-		<m_position.x>91</m_position.x>
+	</null>
+	<null>
+		<m_position.x>-41</m_position.x>
 		<m_scale>1</m_scale>
 		<m_speed>100</m_speed>
-	</*gwo>
-	<*gwo>
-		<m_position.x>155</m_position.x>
+	</null>
+	<null>
+		<m_position.x>-158</m_position.x>
 		<m_scale>1</m_scale>
 		<m_speed>100</m_speed>
-	</*gwo>
-	<*gwo>
-		<m_position.x>203</m_position.x>
+	</null>
+	<null>
+		<m_position.x>-112</m_position.x>
 		<m_scale>1</m_scale>
 		<m_speed>100</m_speed>
-	</*gwo>
-	<*gwo>
-		<m_position.x>43</m_position.x>
+	</null>
+	<null>
+		<m_position.x>173</m_position.x>
 		<m_scale>1</m_scale>
 		<m_speed>100</m_speed>
-	</*gwo>
-	<*gwo>
-		<m_position.x>-197</m_position.x>
+	</null>
+	<null>
+		<m_position.x>193</m_position.x>
 		<m_scale>1</m_scale>
 		<m_speed>100</m_speed>
-	</*gwo>
-	<*gwo>
-		<m_position.x>-34</m_position.x>
+	</null>
+	<null>
+		<m_position.x>-14</m_position.x>
 		<m_scale>1</m_scale>
 		<m_speed>100</m_speed>
-	</*gwo>
+	</null>
+	<null>
+		<m_position.x>-203</m_position.x>
+		<m_scale>1</m_scale>
+		<m_speed>100</m_speed>
+	</null>
+	<null>
+		<m_position.x>-262</m_position.x>
+		<m_scale>1</m_scale>
+		<m_speed>100</m_speed>
+	</null>
+	<null>
+		<m_position.x>219</m_position.x>
+		<m_scale>1</m_scale>
+		<m_speed>100</m_speed>
+	</null>
+	<null>
+		<m_position.x>215</m_position.x>
+		<m_scale>1</m_scale>
+		<m_speed>100</m_speed>
+	</null>
 </cereal>
 

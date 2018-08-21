@@ -23,7 +23,7 @@ public:
 	// UNIMPLEMENTED Calls update on the graphics component
 	void GraphicsUpdate(Camera const & camera) const;
 
-	std::string m_name = { "untitled" };
+	std::string m_name = { "null" };
 	 Vec2 m_position = { 0,0 };
 	 float m_scale = 1.0f; // scale is for camera which is also a GWO
 	 double m_speed = 100.0;

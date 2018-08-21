@@ -1,5 +1,4 @@
 #include "FileOutput.h"
-#include "cereal/types/memory.hpp"
 
 void FileOutput::Update(std::vector<std::unique_ptr<GWO>> const & mainGWOContainer)
 {
@@ -29,7 +28,7 @@ void FileOutput::SaveGame(std::vector<std::unique_ptr<GWO>> const & mainGWOConta
 			for (auto & gwo : mainGWOContainer)
 			{
 				//gwo->serialize(archive);
-				archive(CEREAL_NVP(*gwo));
+				archive(cereal::make_nvp(gwo->m_name, *gwo));
 			}
 			//archive(CEREAL_NVP(5),
 			//	CEREAL_NVP(20),
