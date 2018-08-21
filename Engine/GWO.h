@@ -13,17 +13,17 @@ class GWO
 public:		
 
 	// Initializes unique_ptr components to null
-	GWO();
+	GWO(std::string gwoTitle);
 
 	// Calls std::move on each parameter
-	GWO(std::unique_ptr<GraphicsComponent> graphicsComponent,
+	GWO(std::string gwoTitle, std::unique_ptr<GraphicsComponent> graphicsComponent,
 		std::unique_ptr<InputComponent> inputComponent,
 		std::unique_ptr<LogicComponent> logicComponent);
 
 	// UNIMPLEMENTED Calls update on the graphics component
 	void GraphicsUpdate(Camera const & camera) const;
 
-	std::string m_name = { "null" };
+	std::string m_gwoTitle;
 	 Vec2 m_position = { 0,0 };
 	 float m_scale = 1.0f; // scale is for camera which is also a GWO
 	 double m_speed = 100.0;

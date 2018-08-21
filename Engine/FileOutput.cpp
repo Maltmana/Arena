@@ -27,7 +27,7 @@ void FileOutput::SaveGame(std::vector<std::unique_ptr<GWO>> const & mainGWOConta
 			int x = 0;
 			for (auto & gwo : mainGWOContainer)
 			{
-				archive(cereal::make_nvp(gwo->m_name, *gwo));
+				archive(cereal::make_nvp(gwo->m_gwoTitle, *gwo));
 			}
 		}
 	}

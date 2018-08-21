@@ -4,7 +4,8 @@
 
 Camera::Camera(Graphics & graphics)
 	:
-	m_graphics{ graphics }
+	m_graphics{ graphics },
+	GWO("Camera")
 {
 }
 // all connections between game and graphics go through camera object. Begins with making drawable out of GWO and applying entities position and scale onto its drawable

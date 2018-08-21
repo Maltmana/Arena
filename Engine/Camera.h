@@ -13,7 +13,7 @@ public:
 	Camera(Graphics & graphics);
 	Camera(const Camera & camera) // TODO : put this in cpp
 		:
-		GWO(),
+		GWO("Camera"),
 		m_graphics{camera.m_graphics}
 	{
 		numberOfCameras++;

@@ -1,24 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <cereal>
-	<null>
+	<creature>
 		<m_position.x>0</m_position.x>
 		<m_scale>1</m_scale>
 		<m_speed>100</m_speed>
-	</null>
-	<null>
-		<m_position.x>-138</m_position.x>
+	</creature>
+	<creature>
+		<m_position.x>-60</m_position.x>
 		<m_scale>1</m_scale>
 		<m_speed>100</m_speed>
-	</null>
-	<null>
-		<m_position.x>31</m_position.x>
+	</creature>
+	<creature>
+		<m_position.x>148</m_position.x>
 		<m_scale>1</m_scale>
 		<m_speed>100</m_speed>
-	</null>
-	<null>
-		<m_position.x>92</m_position.x>
+	</creature>
+	<creature>
+		<m_position.x>150</m_position.x>
 		<m_scale>1</m_scale>
 		<m_speed>100</m_speed>
-	</null>
+	</creature>
+	<creature>
+		<m_position.x>-17</m_position.x>
+		<m_scale>1</m_scale>
+		<m_speed>100</m_speed>
+	</creature>
+	<creature>
+		<m_position.x>-115</m_position.x>
+		<m_scale>1</m_scale>
+		<m_speed>100</m_speed>
+	</creature>
+	<creature>
+		<m_position.x>-230</m_position.x>
+		<m_scale>1</m_scale>
+		<m_speed>100</m_speed>
+	</creature>
+	<creature>
+		<m_position.x>68</m_position.x>
+		<m_scale>1</m_scale>
+		<m_speed>100</m_speed>
+	</creature>
+	<creature>
+		<m_position.x>192</m_position.x>
+		<m_scale>1</m_scale>
+		<m_speed>100</m_speed>
+	</creature>
 </cereal>
 
