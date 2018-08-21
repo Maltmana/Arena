@@ -159,6 +159,9 @@
     <ClInclude Include="FileInput.h">
       <Filter>Header Files\Input</Filter>
     </ClInclude>
+    <ClInclude Include="MyWinHelperFunctions.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">

@@ -6,67 +6,17 @@
 		<m_speed>100</m_speed>
 	</null>
 	<null>
-		<m_position.x>0</m_position.x>
+		<m_position.x>-138</m_position.x>
 		<m_scale>1</m_scale>
 		<m_speed>100</m_speed>
 	</null>
 	<null>
-		<m_position.x>61</m_position.x>
+		<m_position.x>31</m_position.x>
 		<m_scale>1</m_scale>
 		<m_speed>100</m_speed>
 	</null>
 	<null>
-		<m_position.x>77</m_position.x>
-		<m_scale>1</m_scale>
-		<m_speed>100</m_speed>
-	</null>
-	<null>
-		<m_position.x>-41</m_position.x>
-		<m_scale>1</m_scale>
-		<m_speed>100</m_speed>
-	</null>
-	<null>
-		<m_position.x>-158</m_position.x>
-		<m_scale>1</m_scale>
-		<m_speed>100</m_speed>
-	</null>
-	<null>
-		<m_position.x>-112</m_position.x>
-		<m_scale>1</m_scale>
-		<m_speed>100</m_speed>
-	</null>
-	<null>
-		<m_position.x>173</m_position.x>
-		<m_scale>1</m_scale>
-		<m_speed>100</m_speed>
-	</null>
-	<null>
-		<m_position.x>193</m_position.x>
-		<m_scale>1</m_scale>
-		<m_speed>100</m_speed>
-	</null>
-	<null>
-		<m_position.x>-14</m_position.x>
-		<m_scale>1</m_scale>
-		<m_speed>100</m_speed>
-	</null>
-	<null>
-		<m_position.x>-203</m_position.x>
-		<m_scale>1</m_scale>
-		<m_speed>100</m_speed>
-	</null>
-	<null>
-		<m_position.x>-262</m_position.x>
-		<m_scale>1</m_scale>
-		<m_speed>100</m_speed>
-	</null>
-	<null>
-		<m_position.x>219</m_position.x>
-		<m_scale>1</m_scale>
-		<m_speed>100</m_speed>
-	</null>
-	<null>
-		<m_position.x>215</m_position.x>
+		<m_position.x>92</m_position.x>
 		<m_scale>1</m_scale>
 		<m_speed>100</m_speed>
 	</null>
