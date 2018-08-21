@@ -16,11 +16,12 @@ class FileOutput
 {
 public:
 	void Update();
-	void RequestSave();
+	void RequestSave(std::string saveFileTitle = "untitled.xml");
 private:
 	void SaveGame() const;
 
-	std::string m_ofFilePath = "SavedGames\\Quicksave.XML"; // TODO : this really should be handled with concotanating savedGamesFolder
+	std::string m_saveFileTitle = "untitled.xml";
+
 	LPCWSTR m_saveGamesFolder = L"SavedGames";
 	bool m_toSaveFlag = false;
 };

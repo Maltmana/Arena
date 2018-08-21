@@ -73,7 +73,7 @@ class QuickSaveCommand : public Command
 public:
 	virtual void execute(EXECUTEPARAM) override
 	{
-		fileOutput.RequestSave();
+		fileOutput.RequestSave("quicksave.xml");
 	}
 };
 
