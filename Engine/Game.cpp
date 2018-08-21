@@ -11,6 +11,7 @@ Game::Game(Camera & camera, UserInputManager & userInputManager)
 
 void Game::BeginFrame()
 {
+
 	m_clock.frameTime = m_clock.GetCounterS(); // TODO ; simplify timer function to just be one call and the return is old time.
 	m_clock.StartCounter();
 }
@@ -95,9 +96,11 @@ void Game::UpdateOutput()
 
 void Game::Go()
 {
+	m_camera.BeginFrame();
 	BeginFrame();
 	UpdateInput();
 	UpdateController();
 	UpdateModel();
 	UpdateOutput();
+	m_camera.EndFrame();
 }
