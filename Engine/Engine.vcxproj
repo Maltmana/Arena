@@ -180,6 +180,7 @@
     <ClCompile Include="CreatureHandler.cpp" />
     <ClCompile Include="Drawable.cpp" />
     <ClCompile Include="DXErr.cpp" />
+    <ClCompile Include="FileOutput.cpp" />
     <ClCompile Include="GWO.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Graphics.cpp" />
