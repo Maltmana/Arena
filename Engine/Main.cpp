@@ -32,8 +32,6 @@ int WINAPI wWinMain( HINSTANCE hInst,HINSTANCE,LPWSTR pArgs,INT )
 		MainWindow window( hInst,pArgs );		
 		try
 		{
-			// create super objects and Game
-
 			Graphics graphics{ window };
 			Camera camera{ graphics };
 			UserInputManager userInputManager{ window };

@@ -50,23 +50,21 @@ private:
 	void UpdateModel();
 	void UpdateOutput();
 
-	// SUPER COMPONENTS
-	Camera & m_camera;
-	UserInputManager & m_userInputManager;
+	// INPUT
 	FileIO m_fileIO;
 
-	Clock m_clock;
+	// CONTROLLER
+	UserInputManager & m_userInputManager;
 
-	//Game World Stuff
-
+	// MODEL
 	std::vector<std::unique_ptr<GWO>> m_MainGWOContainer;
-
-	// GWO Creators
 	CreatureCreator m_creatureCreator;
 
+	// OUTPUT
+	Camera & m_camera;
 
-	// TO BE ORGANIZED BETTER AND MORE MODULARLY
-
+	//MISC
+	Clock m_clock;
 	bool m_drawHitboxMode = true;
 
 
