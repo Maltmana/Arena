@@ -6,12 +6,11 @@ Game::Game(Camera & camera, UserInputManager & userInputManager)
 	m_camera{ camera },
 	m_userInputManager{userInputManager}
 {
-	m_mainGWOContainer.emplace_back(m_creatureCreator.CreateOgre()); // TEMP TEST
+	//m_mainGWOContainer.emplace_back(m_camera); can't do it because a camera is not a unique ptr to GWO even though camera inherits from GWO. Not sure what to do without changing the GWO list.
 }
 
 void Game::BeginFrame()
 {
-
 	m_clock.frameTime = m_clock.GetCounterS(); // TODO ; simplify timer function to just be one call and the return is old time.
 	m_clock.StartCounter();
 }

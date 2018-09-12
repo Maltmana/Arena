@@ -57,7 +57,7 @@ private:
 	UserInputManager & m_userInputManager;
 
 	// MODEL
-	std::vector<std::unique_ptr<GWO>> m_mainGWOContainer;
+	std::vector<std::unique_ptr<GWO>> m_mainGWOContainer; //move camera into this???
 	CreatureCreator m_creatureCreator;
 
 	// OUTPUT

@@ -162,6 +162,9 @@
     <ClInclude Include="MyWinHelperFunctions.h">
       <Filter>Header Files\Misc</Filter>
     </ClInclude>
+    <ClInclude Include="MainGwoContainer.h">
+      <Filter>Header Files\Model</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">

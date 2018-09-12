@@ -160,6 +160,7 @@
     <ClInclude Include="InputComponent.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="LogicComponent.h" />
+    <ClInclude Include="MainGwoContainer.h" />
     <ClInclude Include="MyWinHelperFunctions.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="UserInputManager.h" />
